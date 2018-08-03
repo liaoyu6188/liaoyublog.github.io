@@ -229,6 +229,369 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/03/61/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liaoyublog.github.io/2018/08/03/61/" itemprop="url">剑指offer——61.序列化二叉树</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-03T18:39:13+08:00">
+                2018-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>请实现两个函数，分别用来序列化和反序列化二叉树</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路：<br>  序列化，将节点值存入数组中，空节点则使用特殊标记存入数组中。<br>  反序列化，从数组中获取元素，为number类型则生成节点，为特殊标记，则为空节点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">/* function TreeNode(x) &#123;</span><br><span class="line">    this.val = x;</span><br><span class="line">    this.left = null;</span><br><span class="line">    this.right = null;</span><br><span class="line">&#125; */</span><br><span class="line">var arr=[];</span><br><span class="line">function Serialize(pRoot)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    if(pRoot==null)&#123;</span><br><span class="line">        arr.push(&apos;#&apos;)</span><br><span class="line">        return;</span><br><span class="line">    &#125; </span><br><span class="line">    arr.push(pRoot.val);</span><br><span class="line">    Serialize(pRoot.left)</span><br><span class="line">    Serialize(pRoot.right)</span><br><span class="line">&#125;</span><br><span class="line">function Deserialize(s)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    if(arr==null)&#123;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if(arr.length&lt;1)&#123;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line">    var root=null;</span><br><span class="line">    var temp=arr.shift();</span><br><span class="line">    if(typeof temp==&apos;number&apos;)&#123;</span><br><span class="line">        root=new TreeNode(temp);</span><br><span class="line">        root.left=Deserialize(arr);</span><br><span class="line">        root.right=Deserialize(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    return root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/03/60/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liaoyublog.github.io/2018/08/03/60/" itemprop="url">剑指offer——60.把二叉树打印成多行</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-03T18:39:09+08:00">
+                2018-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>从上到下按层打印二叉树，同一层结点从左至右输出。每一层输出一行。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： 采用队列数据结构，同时需要两个变量分别存储这一层和下一层结点个数。当前层结点个数为零时，则输出结点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">/* function TreeNode(x) &#123;</span><br><span class="line">    this.val = x;</span><br><span class="line">    this.left = null;</span><br><span class="line">    this.right = null;</span><br><span class="line">&#125; */</span><br><span class="line">function Print(pRoot)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    var queue = [];//存储节点队列</span><br><span class="line">    var result = [];</span><br><span class="line">    if(pRoot==null) return result;</span><br><span class="line">    var nextLevel = 0;</span><br><span class="line">    queue.push(pRoot);</span><br><span class="line">    var toBePrinted = 1;//每一行节点个数</span><br><span class="line">    var arr = [];</span><br><span class="line">    while(queue.length)&#123;</span><br><span class="line">        var temp = queue.shift();</span><br><span class="line">        toBePrinted--;</span><br><span class="line">        arr.push(temp.val);</span><br><span class="line">        if(temp.left)&#123;</span><br><span class="line">            queue.push(temp.left);</span><br><span class="line">            nextLevel++;</span><br><span class="line">        &#125;</span><br><span class="line">        if(temp.right)&#123;</span><br><span class="line">            queue.push(temp.right);</span><br><span class="line">            nextLevel++;</span><br><span class="line">        &#125;</span><br><span class="line">        if(toBePrinted==0)&#123;</span><br><span class="line">            toBePrinted=nextLevel;</span><br><span class="line">            nextLevel=0;</span><br><span class="line">            result.push(arr);</span><br><span class="line">            arr = [];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/03/59/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liaoyublog.github.io/2018/08/03/59/" itemprop="url">剑指offer——59.按之字形顺序打印二叉树</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-03T18:39:04+08:00">
+                2018-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>请实现一个函数按照之字形打印二叉树，即第一行按照从左到右的顺序打印，第二层按照从右至左的顺序打印，第三行按照从左到右的顺序打印，其他行以此类推。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： 按深度遍历二叉树，深度（从0开始）为奇数的反转加入数组。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">/* function TreeNode(x) &#123;</span><br><span class="line">    this.val = x;</span><br><span class="line">    this.left = null;</span><br><span class="line">    this.right = null;</span><br><span class="line">&#125; */</span><br><span class="line">function Print(pRoot)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    var queue = [];//存储节点队列</span><br><span class="line">    var result = [];</span><br><span class="line">    if(pRoot==null) return result;</span><br><span class="line">    var nextLevel = 0;</span><br><span class="line">    queue.push(pRoot);</span><br><span class="line">    var toBePrinted = 1;//每一行节点个数</span><br><span class="line">    var level = 0;//深度</span><br><span class="line">    var arr = [];</span><br><span class="line">    while(queue.length)&#123;</span><br><span class="line">        var temp = queue.shift();</span><br><span class="line">        toBePrinted--;</span><br><span class="line">        arr.push(temp.val);</span><br><span class="line">        if(temp.left)&#123;</span><br><span class="line">            queue.push(temp.left);</span><br><span class="line">            nextLevel++;</span><br><span class="line">        &#125;</span><br><span class="line">        if(temp.right)&#123;</span><br><span class="line">            queue.push(temp.right);</span><br><span class="line">            nextLevel++;</span><br><span class="line">        &#125;</span><br><span class="line">        if(toBePrinted==0)&#123;</span><br><span class="line">            toBePrinted=nextLevel;</span><br><span class="line">            nextLevel=0;</span><br><span class="line">            level++;</span><br><span class="line">            if(level%2==0)&#123;</span><br><span class="line">                arr.reverse();</span><br><span class="line">            &#125;</span><br><span class="line">            result.push(arr);</span><br><span class="line">            arr = [];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/02/58/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1070,394 +1433,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/07/31/51/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liao Yu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liaoyublog.github.io/2018/07/31/51/" itemprop="url">剑指offer——51.构建乘积数组</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-31T21:54:41+08:00">
-                2018-07-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0]<em>A[1]</em>…<em>A[i-1]</em>A[i+1]<em>…</em>A[n-1]。不能使用除法。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： 构建前向乘积数组C[i]=A[0]A[1]…<em>A[i-1]，即C[i]=C[i-1]</em>A[i-1]；</p>
-<p>构建后向乘积数组D[i]=A[n-1]A[n-2]…A[n-i+1]，即D[i]=D[i+1]*A[i+1]；</p>
-<p>通过C[i],D[i]来求B[i]：B[i]=C[i]*D[i]</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function multiply(array)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    var len=array.length;</span><br><span class="line">    var arr=[];</span><br><span class="line">    if(array==null||len&lt;=0) return ;</span><br><span class="line">    arr[0]=1;</span><br><span class="line">    for(var i=1;i&lt;len;i++)&#123;</span><br><span class="line">        arr[i]=arr[i-1]*array[i-1]//完成所有元素中i前面的乘法</span><br><span class="line">    &#125;</span><br><span class="line">    var temp=1</span><br><span class="line">    for(var i=len-2;i&gt;=0;i--)&#123;</span><br><span class="line">        temp*=array[i+1]</span><br><span class="line">        arr[i]*=temp</span><br><span class="line">    &#125;</span><br><span class="line">    return arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/07/31/50/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liao Yu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liaoyublog.github.io/2018/07/31/50/" itemprop="url">剑指offer——50.数组中重复数字</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-31T21:54:34+08:00">
-                2018-07-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>在一个长度为n的数组里的所有数字都在0到n-1的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。也不知道每个数字重复几次。请找出数组中任意一个重复的数字。 例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，那么对应的输出是第一个重复的数字2。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： ES5使用对象，ES6使用map</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function duplicate(numbers, duplication)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    //这里要特别注意~找到任意重复的一个值并赋值到duplication[0]</span><br><span class="line">    //函数返回True/False</span><br><span class="line">    if(numbers==null||numbers.length&lt;2) return false</span><br><span class="line">    var obj=&#123;&#125;;</span><br><span class="line">    numbers.map(function(num)&#123;</span><br><span class="line">        if(!obj[num])&#123;</span><br><span class="line">            obj[num]=1 </span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            duplication.push(num)</span><br><span class="line">        &#125;        </span><br><span class="line">    &#125;)</span><br><span class="line">    if(duplication.length&gt;1) &#123;</span><br><span class="line">        duplication.shift();return true;</span><br><span class="line">    &#125;</span><br><span class="line">    else return false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/07/30/49/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liao Yu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liaoyublog.github.io/2018/07/30/49/" itemprop="url">剑指offer——49.把字符串转换成整数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-30T18:04:52+08:00">
-                2018-07-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>将一个字符串转换成一个整数(实现Integer.valueOf(string)的功能，但是string不符合数字要求时返回0)，要求不能使用字符串转换整数的库函数。 数值为0或者字符串不是一个合法的数值则返回0。</p>
-<p>输入描述：</p>
-<blockquote>
-<p>输入一个字符串,包括数字字母符号,可以为空 </p>
-</blockquote>
-<p>输出描述：</p>
-<blockquote>
-<p>如果是合法的数值表达则返回该数字，否则返回0</p>
-</blockquote>
-<p>示例1</p>
-<blockquote>
-<p>+2147483647<br>1a33</p>
-</blockquote>
-<p>输出</p>
-<blockquote>
-<p>2147483647<br>0</p>
-</blockquote>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： 递归</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">function StrToInt(str)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    if(str==null || str.length&lt;=0) return 0;</span><br><span class="line">    var len=str.length,index=0,flag=false;</span><br><span class="line">    var arr=str.split(&apos;&apos;)</span><br><span class="line">    if(arr[0]==&apos;+&apos;)&#123;</span><br><span class="line">        index++</span><br><span class="line">    &#125;else if(arr[0]==&apos;-&apos;)&#123;</span><br><span class="line">        flag=true</span><br><span class="line">        index++</span><br><span class="line">    &#125;       </span><br><span class="line">    var num=strToIntCore(arr,index,len,flag)</span><br><span class="line">    return num;</span><br><span class="line">&#125;</span><br><span class="line">function strToIntCore(arr,start,length,minus)&#123;</span><br><span class="line">        var number=0;</span><br><span class="line">        if(arr==null||start&gt;=length) return number;</span><br><span class="line">        while(start&lt;length)&#123;</span><br><span class="line">            if(arr[start]&gt;=&apos;0&apos;&amp;&amp; arr[start]&lt;=&apos;9&apos;)&#123;</span><br><span class="line">                var flag=minus?-1:1;</span><br><span class="line">                number=number*10+(arr[start]-&apos;0&apos;)*flag</span><br><span class="line">                start++</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                number=0;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return number;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>思路2：利用+运算符</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function StrToInt(str)</span><br><span class="line">&#123;</span><br><span class="line">    let res = +str</span><br><span class="line">     </span><br><span class="line">    if (res) &#123;</span><br><span class="line">        return res</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return 0</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/liaoyublog.github.io/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/liaoyublog.github.io/page/6/">6</a><a class="extend next" rel="next" href="/liaoyublog.github.io/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/liaoyublog.github.io/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/liaoyublog.github.io/page/7/">7</a><a class="extend next" rel="next" href="/liaoyublog.github.io/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1503,7 +1483,7 @@
               
                 <a href="/liaoyublog.github.io/archives/">
               
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
