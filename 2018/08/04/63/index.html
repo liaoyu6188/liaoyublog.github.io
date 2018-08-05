@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="题目描述输入一颗二叉树的跟节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。(注意: 在返回值的list中，数组长度大的数组靠前) 代码思路： 思路：判断当前结点是否是叶子结点，以及curtSum是否等于expectNumber。如果是，把当前路径保存在res结果中。 1234567891011121314151617">
+<meta name="description" content="题目描述如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。我们使用Insert()方法读取数据流，使用GetMedian()方法获取当前读取数据的中位数。 代码思路1：先排序，然后直接找中间那个值。如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="剑指offer——24.二叉树中和为某一值的路径">
-<meta property="og:url" content="https://liaoyu6188.github.io/liaoyublog.github.io/2018/07/22/24/index.html">
+<meta property="og:title" content="剑指offer——63.数据流中的中位数">
+<meta property="og:url" content="https://liaoyu6188.github.io/liaoyublog.github.io/2018/08/04/63/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="题目描述输入一颗二叉树的跟节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。(注意: 在返回值的list中，数组长度大的数组靠前) 代码思路： 思路：判断当前结点是否是叶子结点，以及curtSum是否等于expectNumber。如果是，把当前路径保存在res结果中。 1234567891011121314151617">
+<meta property="og:description" content="题目描述如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。我们使用Insert()方法读取数据流，使用GetMedian()方法获取当前读取数据的中位数。 代码思路1：先排序，然后直接找中间那个值。如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-22T13:34:26.272Z">
+<meta property="og:updated_time" content="2018-08-05T01:00:11.780Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="剑指offer——24.二叉树中和为某一值的路径">
-<meta name="twitter:description" content="题目描述输入一颗二叉树的跟节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。(注意: 在返回值的list中，数组长度大的数组靠前) 代码思路： 思路：判断当前结点是否是叶子结点，以及curtSum是否等于expectNumber。如果是，把当前路径保存在res结果中。 1234567891011121314151617">
+<meta name="twitter:title" content="剑指offer——63.数据流中的中位数">
+<meta name="twitter:description" content="题目描述如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。我们使用Insert()方法读取数据流，使用GetMedian()方法获取当前读取数据的中位数。 代码思路1：先排序，然后直接找中间那个值。如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://liaoyu6188.github.io/liaoyublog.github.io/2018/07/22/24/"/>
+  <link rel="canonical" href="https://liaoyu6188.github.io/liaoyublog.github.io/2018/08/04/63/"/>
 
 
 
 
 
-  <title>剑指offer——24.二叉树中和为某一值的路径 | Hexo</title>
+  <title>剑指offer——63.数据流中的中位数 | Hexo</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/07/22/24/">
+    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/04/63/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liao Yu">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">剑指offer——24.二叉树中和为某一值的路径</h1>
+          <h1 class="post-title" itemprop="name headline">剑指offer——63.数据流中的中位数</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-22T21:27:52+08:00">
-                2018-07-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-04T21:52:53+08:00">
+                2018-08-04
               </time>
             
 
@@ -299,9 +299,12 @@
       
 
       
-        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>输入一颗二叉树的跟节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。(注意: 在返回值的list中，数组长度大的数组靠前)</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： 思路：判断当前结点是否是叶子结点，以及curtSum是否等于expectNumber。如果是，把当前路径保存在res结果中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">function FindPath(root, expectNumber)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line"></span><br><span class="line">    var result=[];</span><br><span class="line">    if(root==null) return result;</span><br><span class="line">    dfs(root,0,[]);</span><br><span class="line">    function dfs(root,current,path)&#123;</span><br><span class="line">        current+=root.val;</span><br><span class="line">        path.push(root.val)</span><br><span class="line">        if(current==expectNumber &amp;&amp; root.left==null &amp;&amp; root.right ==null)&#123;</span><br><span class="line">            result.push(path.slice(0))</span><br><span class="line">        &#125;</span><br><span class="line">        if(root.left!=null)&#123;</span><br><span class="line">            dfs(root.left,current,path)</span><br><span class="line">        &#125;</span><br><span class="line">        if(root.right!=null)&#123;</span><br><span class="line">            dfs(root.right,current,path)</span><br><span class="line">        &#125;</span><br><span class="line">        path.pop()</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。我们使用Insert()方法读取数据流，使用GetMedian()方法获取当前读取数据的中位数。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路1：先排序，然后直接找中间那个值。如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var arr=[]</span><br><span class="line">function Insert(num)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    arr.push(num);</span><br><span class="line">    arr.sort()</span><br><span class="line">&#125;</span><br><span class="line">function GetMedian()&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    var len=arr.length;</span><br><span class="line">    if(len%2!=0)&#123;</span><br><span class="line">        return arr[Math.floor(len/2)];</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return (arr[len/2-1]+arr[len/2])/2</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>思路2： 大小顶堆，数据流传输时，第偶个数，存入大顶堆中，然后将大顶堆中最大元素取出放入小顶堆中，第奇个数，存入小顶堆，然后将小顶堆中最小元素取出放入大顶堆中。最后小顶堆存放的元素都大于大顶堆存放元素。</p>
+<p>当数量为偶数时候，访问大顶堆中最大元素和小顶堆中最小元素平均值，当数量为奇数时，访问小顶堆中最小元素。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">var arr1=[],arr2=[],count=0;</span><br><span class="line">function Insert(num)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    if(count%2==0)&#123;</span><br><span class="line">        arr1.push(num);</span><br><span class="line">        arr1.sort(function(a,b)&#123;</span><br><span class="line">            return a-b;</span><br><span class="line">        &#125;)</span><br><span class="line">        arr2.push(arr1.pop());</span><br><span class="line">        arr2.sort(function(a,b)&#123;</span><br><span class="line">            return b-a;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        arr2.push(num);</span><br><span class="line">        arr2.sort(function(a,b)&#123;</span><br><span class="line">            return b-a;</span><br><span class="line">        &#125;)</span><br><span class="line">        arr1.push(arr2.pop());</span><br><span class="line">        arr1.sort(function(a,b)&#123;</span><br><span class="line">            return a-b;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    count++</span><br><span class="line">&#125;</span><br><span class="line">function GetMedian()&#123;</span><br><span class="line">    // write code here</span><br><span class="line"></span><br><span class="line">    if(count%2!=0)&#123;</span><br><span class="line">        return arr2[arr2.length-1]</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return (arr1[arr1.length-1]+arr2[arr2.length-1])/2</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -325,8 +328,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/liaoyublog.github.io/2018/07/22/23/" rel="next" title="剑指offer——23.二叉搜索树的后序遍历">
-                <i class="fa fa-chevron-left"></i> 剑指offer——23.二叉搜索树的后序遍历
+              <a href="/liaoyublog.github.io/2018/08/04/62/" rel="next" title="剑指offer——62.二叉搜索树的第k个结点">
+                <i class="fa fa-chevron-left"></i> 剑指offer——62.二叉搜索树的第k个结点
               </a>
             
           </div>
@@ -335,8 +338,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/liaoyublog.github.io/2018/07/23/25/" rel="prev" title="剑指offer——25.复杂链表的复制">
-                剑指offer——25.复杂链表的复制 <i class="fa fa-chevron-right"></i>
+              <a href="/liaoyublog.github.io/2018/08/04/64/" rel="prev" title="剑指offer——64.滑动窗口的最大值">
+                剑指offer——64.滑动窗口的最大值 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

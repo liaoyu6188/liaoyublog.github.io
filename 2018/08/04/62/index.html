@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="题目描述输入一颗二叉树的跟节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。(注意: 在返回值的list中，数组长度大的数组靠前) 代码思路： 思路：判断当前结点是否是叶子结点，以及curtSum是否等于expectNumber。如果是，把当前路径保存在res结果中。 1234567891011121314151617">
+<meta name="description" content="题目描述给定一棵二叉搜索树，请找出其中的第k小的结点。例如， （5，3，7，2，4，6，8）    中，按结点数值大小顺序第三小结点的值为4。 代码思路： 二叉搜索树，若任意节点的左子树不空，则左子树上所有节点的值均小于它的根节点的值；若任意节点的右子树不空，则右子树上所有节点的值均大于它的根节点的值；任意节点的左、右子树也分别为二叉查找树；所以采用中序遍历的方法，遍历后的结果就是从小到大顺序的结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="剑指offer——24.二叉树中和为某一值的路径">
-<meta property="og:url" content="https://liaoyu6188.github.io/liaoyublog.github.io/2018/07/22/24/index.html">
+<meta property="og:title" content="剑指offer——62.二叉搜索树的第k个结点">
+<meta property="og:url" content="https://liaoyu6188.github.io/liaoyublog.github.io/2018/08/04/62/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="题目描述输入一颗二叉树的跟节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。(注意: 在返回值的list中，数组长度大的数组靠前) 代码思路： 思路：判断当前结点是否是叶子结点，以及curtSum是否等于expectNumber。如果是，把当前路径保存在res结果中。 1234567891011121314151617">
+<meta property="og:description" content="题目描述给定一棵二叉搜索树，请找出其中的第k小的结点。例如， （5，3，7，2，4，6，8）    中，按结点数值大小顺序第三小结点的值为4。 代码思路： 二叉搜索树，若任意节点的左子树不空，则左子树上所有节点的值均小于它的根节点的值；若任意节点的右子树不空，则右子树上所有节点的值均大于它的根节点的值；任意节点的左、右子树也分别为二叉查找树；所以采用中序遍历的方法，遍历后的结果就是从小到大顺序的结">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-22T13:34:26.272Z">
+<meta property="og:updated_time" content="2018-08-05T01:00:12.684Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="剑指offer——24.二叉树中和为某一值的路径">
-<meta name="twitter:description" content="题目描述输入一颗二叉树的跟节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。(注意: 在返回值的list中，数组长度大的数组靠前) 代码思路： 思路：判断当前结点是否是叶子结点，以及curtSum是否等于expectNumber。如果是，把当前路径保存在res结果中。 1234567891011121314151617">
+<meta name="twitter:title" content="剑指offer——62.二叉搜索树的第k个结点">
+<meta name="twitter:description" content="题目描述给定一棵二叉搜索树，请找出其中的第k小的结点。例如， （5，3，7，2，4，6，8）    中，按结点数值大小顺序第三小结点的值为4。 代码思路： 二叉搜索树，若任意节点的左子树不空，则左子树上所有节点的值均小于它的根节点的值；若任意节点的右子树不空，则右子树上所有节点的值均大于它的根节点的值；任意节点的左、右子树也分别为二叉查找树；所以采用中序遍历的方法，遍历后的结果就是从小到大顺序的结">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://liaoyu6188.github.io/liaoyublog.github.io/2018/07/22/24/"/>
+  <link rel="canonical" href="https://liaoyu6188.github.io/liaoyublog.github.io/2018/08/04/62/"/>
 
 
 
 
 
-  <title>剑指offer——24.二叉树中和为某一值的路径 | Hexo</title>
+  <title>剑指offer——62.二叉搜索树的第k个结点 | Hexo</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/07/22/24/">
+    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/04/62/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liao Yu">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">剑指offer——24.二叉树中和为某一值的路径</h1>
+          <h1 class="post-title" itemprop="name headline">剑指offer——62.二叉搜索树的第k个结点</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-22T21:27:52+08:00">
-                2018-07-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-04T21:52:50+08:00">
+                2018-08-04
               </time>
             
 
@@ -299,9 +299,9 @@
       
 
       
-        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>输入一颗二叉树的跟节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。(注意: 在返回值的list中，数组长度大的数组靠前)</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： 思路：判断当前结点是否是叶子结点，以及curtSum是否等于expectNumber。如果是，把当前路径保存在res结果中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">function FindPath(root, expectNumber)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line"></span><br><span class="line">    var result=[];</span><br><span class="line">    if(root==null) return result;</span><br><span class="line">    dfs(root,0,[]);</span><br><span class="line">    function dfs(root,current,path)&#123;</span><br><span class="line">        current+=root.val;</span><br><span class="line">        path.push(root.val)</span><br><span class="line">        if(current==expectNumber &amp;&amp; root.left==null &amp;&amp; root.right ==null)&#123;</span><br><span class="line">            result.push(path.slice(0))</span><br><span class="line">        &#125;</span><br><span class="line">        if(root.left!=null)&#123;</span><br><span class="line">            dfs(root.left,current,path)</span><br><span class="line">        &#125;</span><br><span class="line">        if(root.right!=null)&#123;</span><br><span class="line">            dfs(root.right,current,path)</span><br><span class="line">        &#125;</span><br><span class="line">        path.pop()</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一棵二叉搜索树，请找出其中的第k小的结点。例如， （5，3，7，2，4，6，8）    中，按结点数值大小顺序第三小结点的值为4。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： 二叉搜索树，若任意节点的左子树不空，则左子树上所有节点的值均小于它的根节点的值；若任意节点的右子树不空，则右子树上所有节点的值均大于它的根节点的值；任意节点的左、右子树也分别为二叉查找树；<br>所以采用中序遍历的方法，遍历后的结果就是从小到大顺序的结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/* function TreeNode(x) &#123;</span><br><span class="line">    this.val = x;</span><br><span class="line">    this.left = null;</span><br><span class="line">    this.right = null;</span><br><span class="line">&#125; */</span><br><span class="line">function KthNode(pRoot, k)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line"></span><br><span class="line">    var arr=[];</span><br><span class="line">    if(pRoot===null||k&lt;1)&#123;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line">    function midInorder(root)&#123;</span><br><span class="line">        if(root.left!==null)&#123;</span><br><span class="line">             midInorder(root.left);</span><br><span class="line">        &#125;</span><br><span class="line">        arr.push(root);</span><br><span class="line">        if(root.right!==null)&#123;</span><br><span class="line">            midInorder(root.right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    midInorder(pRoot);</span><br><span class="line">    return arr[k-1];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -325,8 +325,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/liaoyublog.github.io/2018/07/22/23/" rel="next" title="剑指offer——23.二叉搜索树的后序遍历">
-                <i class="fa fa-chevron-left"></i> 剑指offer——23.二叉搜索树的后序遍历
+              <a href="/liaoyublog.github.io/2018/08/03/61/" rel="next" title="剑指offer——61.序列化二叉树">
+                <i class="fa fa-chevron-left"></i> 剑指offer——61.序列化二叉树
               </a>
             
           </div>
@@ -335,8 +335,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/liaoyublog.github.io/2018/07/23/25/" rel="prev" title="剑指offer——25.复杂链表的复制">
-                剑指offer——25.复杂链表的复制 <i class="fa fa-chevron-right"></i>
+              <a href="/liaoyublog.github.io/2018/08/04/63/" rel="prev" title="剑指offer——63.数据流中的中位数">
+                剑指offer——63.数据流中的中位数 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
