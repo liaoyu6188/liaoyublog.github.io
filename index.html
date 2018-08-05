@@ -229,6 +229,248 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/05/66/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liaoyublog.github.io/2018/08/05/66/" itemprop="url">剑指offer——66.机器人的运动范围</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-05T13:37:46+08:00">
+                2018-08-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>地上有一个m行和n列的方格。一个机器人从坐标0,0的格子开始移动，每一次只能向左，右，上，下四个方向移动一格，但是不能进入行坐标和列坐标的数位之和大于k的格子。 例如，当k为18时，机器人能够进入方格（35,37），因为3+5+3+7 = 18。但是，它不能进入方格（35,38），因为3+5+3+8 = 19。请问该机器人能够达到多少个格子？</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： 回溯法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">function movingCount(threshold, rows, cols)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    var count=0;</span><br><span class="line">    if(threshold&lt;1||rows&lt;1||cols&lt;1)&#123;</span><br><span class="line">        return count;</span><br><span class="line">    &#125;</span><br><span class="line">    var visited=[];</span><br><span class="line">    for(var i=0; i&lt;rows; i++)&#123;</span><br><span class="line">        visited[i]=[];</span><br><span class="line">        for(var j=0; j&lt;cols; j++)&#123;</span><br><span class="line">            visited[i][j]=false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    count = movingCountSum(threshold,0,0,rows,cols,visited);</span><br><span class="line">    return count;</span><br><span class="line">&#125;</span><br><span class="line">function movingCountSum(threshold,m,n,rows,cols,visited)&#123;</span><br><span class="line">    var count = 0;</span><br><span class="line">    if(m&gt;=0&amp;&amp;m&lt;rows&amp;&amp;n&gt;=0&amp;&amp;n&lt;cols&amp;&amp;!visited[m][n]&amp;&amp;getSum(m,n)&lt;=threshold)&#123;</span><br><span class="line">        visited[m][n]=true;</span><br><span class="line">        count = 1+movingCountSum(threshold,m,n-1,rows,cols,visited)+</span><br><span class="line">                movingCountSum(threshold,m,n+1,rows,cols,visited)+</span><br><span class="line">                movingCountSum(threshold,m-1,n,rows,cols,visited)+</span><br><span class="line">                movingCountSum(threshold,m+1,n,rows,cols,visited);</span><br><span class="line">    &#125;</span><br><span class="line">    return count;</span><br><span class="line">&#125;</span><br><span class="line">function getSum(m,n)&#123;</span><br><span class="line">    var str = [].concat(m,n).join(&apos;&apos;);</span><br><span class="line">    var sum=0;</span><br><span class="line">    for(var i=0; i&lt;str.length; i++)&#123;</span><br><span class="line">        sum+=Number(str[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    return sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/05/65/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liaoyublog.github.io/2018/08/05/65/" itemprop="url">剑指offer——65.矩阵中的路径</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-05T13:37:41+08:00">
+                2018-08-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一个格子开始，每一步可以在矩阵中向左，向右，向上，向下移动一个格子。如果一条路径经过了矩阵中的某一个格子，则之后不能再次进入这个格子。 例如 a b c e s f c s a d e e 这样的3 X 4 矩阵中包含一条字符串”bcced”的路径，但是矩阵中不包含”abcb”路径，因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，路径不能再次进入该格子。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： 回溯法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">function hasPathCore(matrix, rows, cols, row, col, path, pathIndex, visited) &#123;</span><br><span class="line">  var hasPath = false;</span><br><span class="line">  if (row &lt; rows &amp;&amp; col &lt; cols &amp;&amp; row &gt;= 0 &amp;&amp; col &gt;= 0 &amp;&amp; visited[row][col] === false) &#123;</span><br><span class="line">    if (matrix[row * cols + col] === path[pathIndex]) &#123;</span><br><span class="line">      visited[row][col] = true;</span><br><span class="line">      if (pathIndex === path.length - 1) &#123;</span><br><span class="line">        hasPath = true;</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        hasPath = hasPathCore(matrix, rows, cols, row - 1, col, path, pathIndex + 1, visited) ||</span><br><span class="line">                  hasPathCore(matrix, rows, cols, row + 1, col, path, pathIndex + 1, visited) ||</span><br><span class="line">                  hasPathCore(matrix, rows, cols, row, col - 1, path, pathIndex + 1, visited) ||</span><br><span class="line">                  hasPathCore(matrix, rows, cols, row, col + 1, path, pathIndex + 1, visited);</span><br><span class="line"></span><br><span class="line">        if (!hasPath) &#123;</span><br><span class="line">          visited[row][col] = false;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return hasPath;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function hasPath(matrix, rows, cols, path)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    if (path.length &lt;= 0) &#123;</span><br><span class="line">      return true;</span><br><span class="line">    &#125;</span><br><span class="line">    var visited = [];</span><br><span class="line">    var temp = [];</span><br><span class="line">    var i, j;</span><br><span class="line">    for (i = 0; i &lt; rows; i++) &#123;</span><br><span class="line">      temp = [];</span><br><span class="line">      for (j = 0; j &lt; cols; j++) &#123;</span><br><span class="line">        temp.push(false);</span><br><span class="line">      &#125;</span><br><span class="line">      visited.push(temp);</span><br><span class="line">    &#125;</span><br><span class="line">    for (i = 0; i &lt; rows; i++) &#123;</span><br><span class="line">      for (j = 0; j &lt; cols; j++) &#123;</span><br><span class="line">        if (hasPathCore(matrix, rows, cols, i, j, path, 0, visited)) &#123;</span><br><span class="line">          return true;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/04/64/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1188,248 +1430,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/02/56/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liao Yu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liaoyublog.github.io/2018/08/02/56/" itemprop="url">剑指offer——56.删除链表中重复的结点</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-02T18:32:44+08:00">
-                2018-08-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。 例如，链表1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5 处理后为 1-&gt;2-&gt;5</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路：需要三个指针，第一个指针first的next指向头结点，第二个指针pre指向first，确保每次指向的是重复结点的前一个结点，第三个指针head来遍历，遇到重复结点，则向后，直到找到当前结点不等于下一个结点时，将pre的next指向head。 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">/*function ListNode(x)&#123;</span><br><span class="line">    this.val = x;</span><br><span class="line">    this.next = null;</span><br><span class="line">&#125;*/</span><br><span class="line">function deleteDuplication(pHead)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    if(pHead==null||pHead.next==null) return pHead;</span><br><span class="line">    var first=&#123;</span><br><span class="line">        val:0,</span><br><span class="line">        next:pHead</span><br><span class="line">    &#125;</span><br><span class="line">    var head=pHead,pre=first;</span><br><span class="line">    while(head!=null&amp;&amp;head.next!=null)&#123;</span><br><span class="line">        if(head.val==head.next.val)&#123;</span><br><span class="line">            while(head.next&amp;&amp;head.next.val==head.val)&#123;</span><br><span class="line">                head=head.next;               </span><br><span class="line">            &#125;</span><br><span class="line">            pre.next=head.next;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            pre.next=head;</span><br><span class="line">            pre=pre.next;</span><br><span class="line">        &#125;</span><br><span class="line">        //pre=head;</span><br><span class="line">        head=head.next;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    return first.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/01/55/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liao Yu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liaoyublog.github.io/2018/08/01/55/" itemprop="url">剑指offer——55.链表中环的入口结点</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-01T22:53:54+08:00">
-                2018-08-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： 通过map来存储每次访问的结点，如果有重复，则是链表入口结点。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/*function ListNode(x)&#123;</span><br><span class="line">    this.val = x;</span><br><span class="line">    this.next = null;</span><br><span class="line">&#125;*/</span><br><span class="line">function EntryNodeOfLoop(pHead)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    var cur = pHead ,prev,obj=&#123;&#125;,lt;</span><br><span class="line">    while(cur != null)&#123;</span><br><span class="line">        lt = cur.val;</span><br><span class="line">        if(!obj[lt])&#123;</span><br><span class="line">            obj[lt] = 1;</span><br><span class="line">            cur = cur.next;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            return cur;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1480,7 +1480,7 @@
               
                 <a href="/liaoyublog.github.io/archives/">
               
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
