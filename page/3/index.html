@@ -229,6 +229,130 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/07/30/47/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liaoyublog.github.io/2018/07/30/47/" itemprop="url">剑指offer——47.1+2+3+……+n</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-30T18:04:44+08:00">
+                2018-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>求1+2+3+…+n，要求不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路1： 思路：因为不能用for、if等来判断边界，所以只能通过短路运算来判断。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Sum_Solution(n)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    var sum=n;</span><br><span class="line">    //短路运算，n!==0，如果等于0，则不会进行后续的运算</span><br><span class="line">    var a=(n!=0)&amp;&amp;((sum+=Sum_Solution(n-1))&gt;0)</span><br><span class="line">    return sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>思路2：等差数列公式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function Sum_Solution(n)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    return (1+n)*n/2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/07/29/46/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1311,129 +1435,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/07/27/37/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liao Yu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liaoyublog.github.io/2018/07/27/37/" itemprop="url">剑指offer——37.数字在排序数组中出现的次数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-27T19:55:44+08:00">
-                2018-07-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>统计一个数字在排序数组中出现的次数。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路1：暴力解决方法，遍历</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function GetNumberOfK(data, k)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here   </span><br><span class="line">    var count=0;</span><br><span class="line">    data.forEach(function(a)&#123;</span><br><span class="line">        if(a==k) count++;</span><br><span class="line">        if(a&gt;k) return count;</span><br><span class="line">    &#125;)</span><br><span class="line">    return count</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>思路2：二分查找方法：先看中间元素与k相比，小于则在左半部分，大于则在右半部分。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">function GetNumberOfK(data, k)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    var l = 0,r = data.length,mid;  </span><br><span class="line">    while(l &lt; r)&#123;  </span><br><span class="line">        mid = Math.floor((l+r)/2);  </span><br><span class="line">        if(data[mid] &lt; k )&#123;  </span><br><span class="line">            while(data[mid] == data[mid+1])&#123;  </span><br><span class="line">                mid++;  </span><br><span class="line">            &#125;  </span><br><span class="line">            l = ++mid;  </span><br><span class="line">        &#125;else if(data[mid] &gt; k)&#123;  </span><br><span class="line">            while(data[mid] == data[mid-1])&#123;  </span><br><span class="line">                mid--;  </span><br><span class="line">            &#125;  </span><br><span class="line">            r = --mid;  </span><br><span class="line">        &#125;else&#123;  </span><br><span class="line">            var sign1 = mid,sign2 = mid;  </span><br><span class="line">            while(sign1 &lt;= r &amp;&amp; data[sign1] == data[sign1+1])&#123;  </span><br><span class="line">                sign1++;  </span><br><span class="line">            &#125;  </span><br><span class="line">            while(sign2 &gt;= l &amp;&amp; data[sign2] == data[sign2-1])&#123;  </span><br><span class="line">                sign2--;  </span><br><span class="line">            &#125;  </span><br><span class="line">            return sign1-sign2+1;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    return 0;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1484,7 +1485,7 @@
               
                 <a href="/liaoyublog.github.io/archives/">
               
-                  <span class="site-state-item-count">67</span>
+                  <span class="site-state-item-count">68</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
