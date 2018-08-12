@@ -229,6 +229,128 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/07/30/48/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liaoyublog.github.io/2018/07/30/48/" itemprop="url">剑指offer——48.不用加减乘除做加法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-30T18:04:48+08:00">
+                2018-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路：比如5（101）+2（011）计算，先不进位，直接相加（101+011=001），然后再把进位（001+100=101）加上，</p>
+<p>不考虑进位直接相加可以看出，1+0=1，1+1=0，0+0=0，这是异或操作（^），对加 0 、0 加 1 、1 加 0 而言， 都不会产生进位，只有 1 加 1 时，会向前产生一个进位。此时我们可以想象成是两个数先做位与运算，然后再向左移动一位 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function Add(num1, num2)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    var sum,carry;</span><br><span class="line">    do&#123;</span><br><span class="line">      sum=num1 ^ num2;</span><br><span class="line">      carry=(num1&amp;num2)&lt;&lt;1;</span><br><span class="line">      num1=sum;</span><br><span class="line">      num2=carry;</span><br><span class="line">    &#125;while(num2!=0)</span><br><span class="line">    return sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/07/30/47/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1314,127 +1436,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/07/27/38/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liao Yu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liaoyublog.github.io/2018/07/27/38/" itemprop="url">剑指offer——38.二叉树的深度</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-27T19:55:48+08:00">
-                2018-07-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>输入一棵二叉树，求该树的深度。从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： 递归求左子树和右子树深度，然后比较，最终返回最大值加1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/* function TreeNode(x) &#123;</span><br><span class="line">    this.val = x;</span><br><span class="line">    this.left = null;</span><br><span class="line">    this.right = null;</span><br><span class="line">&#125; */</span><br><span class="line">function TreeDepth(pRoot)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    if(pRoot==null) return 0;</span><br><span class="line">    var left=TreeDepth(pRoot.left);</span><br><span class="line">    var right=TreeDepth(pRoot.right);</span><br><span class="line">    return (left&gt;right)?left+1:right+1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1485,7 +1486,7 @@
               
                 <a href="/liaoyublog.github.io/archives/">
               
-                  <span class="site-state-item-count">68</span>
+                  <span class="site-state-item-count">69</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

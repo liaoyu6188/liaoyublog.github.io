@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="题目描述用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。 代码思路：队列是先进先出的结构，所以可以直接使用JavaScript的数组类型来实现。  1234567891011121314var result=[];function push(node)&amp;#123;    // write code here    result.push(node)&amp;#125;f">
+<meta name="description" content="vue的整个实现流程 第一步：解析模板成render函数 第二步：响应式开始监听 第三步：首次渲染，显示页面，且绑定依赖 第四步：data属性变化，触发rerender  第一步：解析模板成render函数 with的用法 模板中的所有信息都被 render 函数包含 模板中用到的 data 中的属性，都变成了 JS 变量 模板中的 v-model  v-for  v-on 都变成了 JS 逻辑">
 <meta property="og:type" content="article">
-<meta property="og:title" content="剑指offer——5.用两个栈实现">
-<meta property="og:url" content="https://liaoyu6188.github.io/liaoyublog.github.io/2018/07/16/5/index.html">
+<meta property="og:title" content="vue的整个实现流程">
+<meta property="og:url" content="https://liaoyu6188.github.io/liaoyublog.github.io/2018/08/12/vue的整个实现流程/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="题目描述用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。 代码思路：队列是先进先出的结构，所以可以直接使用JavaScript的数组类型来实现。  1234567891011121314var result=[];function push(node)&amp;#123;    // write code here    result.push(node)&amp;#125;f">
+<meta property="og:description" content="vue的整个实现流程 第一步：解析模板成render函数 第二步：响应式开始监听 第三步：首次渲染，显示页面，且绑定依赖 第四步：data属性变化，触发rerender  第一步：解析模板成render函数 with的用法 模板中的所有信息都被 render 函数包含 模板中用到的 data 中的属性，都变成了 JS 变量 模板中的 v-model  v-for  v-on 都变成了 JS 逻辑">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-16T13:51:18.510Z">
+<meta property="og:updated_time" content="2018-08-12T16:21:28.377Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="剑指offer——5.用两个栈实现">
-<meta name="twitter:description" content="题目描述用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。 代码思路：队列是先进先出的结构，所以可以直接使用JavaScript的数组类型来实现。  1234567891011121314var result=[];function push(node)&amp;#123;    // write code here    result.push(node)&amp;#125;f">
+<meta name="twitter:title" content="vue的整个实现流程">
+<meta name="twitter:description" content="vue的整个实现流程 第一步：解析模板成render函数 第二步：响应式开始监听 第三步：首次渲染，显示页面，且绑定依赖 第四步：data属性变化，触发rerender  第一步：解析模板成render函数 with的用法 模板中的所有信息都被 render 函数包含 模板中用到的 data 中的属性，都变成了 JS 变量 模板中的 v-model  v-for  v-on 都变成了 JS 逻辑">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://liaoyu6188.github.io/liaoyublog.github.io/2018/07/16/5/"/>
+  <link rel="canonical" href="https://liaoyu6188.github.io/liaoyublog.github.io/2018/08/12/vue的整个实现流程/"/>
 
 
 
 
 
-  <title>剑指offer——5.用两个栈实现 | Hexo</title>
+  <title>vue的整个实现流程 | Hexo</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/07/16/5/">
+    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/12/vue的整个实现流程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liao Yu">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">剑指offer——5.用两个栈实现</h1>
+          <h1 class="post-title" itemprop="name headline">vue的整个实现流程</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-16T21:24:00+08:00">
-                2018-07-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-12T23:07:46+08:00">
+                2018-08-12
               </time>
             
 
@@ -299,9 +299,38 @@
       
 
       
-        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路：队列是先进先出的结构，所以可以直接使用JavaScript的数组类型来实现。 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var result=[];</span><br><span class="line">function push(node)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    result.push(node)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">function pop()</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    if(result.length === 0)</span><br><span class="line">        return false</span><br><span class="line">    return result.shift()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="vue的整个实现流程"><a href="#vue的整个实现流程" class="headerlink" title="vue的整个实现流程"></a>vue的整个实现流程</h1><ul>
+<li>第一步：解析模板成render函数</li>
+<li>第二步：响应式开始监听</li>
+<li>第三步：首次渲染，显示页面，且绑定依赖</li>
+<li>第四步：data属性变化，触发rerender</li>
+</ul>
+<h2 id="第一步：解析模板成render函数"><a href="#第一步：解析模板成render函数" class="headerlink" title="第一步：解析模板成render函数"></a>第一步：解析模板成render函数</h2><ul>
+<li>with的用法</li>
+<li>模板中的所有信息都被 render 函数包含</li>
+<li>模板中用到的 data 中的属性，都变成了 JS 变量</li>
+<li>模板中的 v-model  v-for  v-on 都变成了 JS 逻辑</li>
+<li>render 函数返回 vnode</li>
+</ul>
+<h2 id="第二步：响应式开始监听"><a href="#第二步：响应式开始监听" class="headerlink" title="第二步：响应式开始监听"></a>第二步：响应式开始监听</h2><ul>
+<li>Object.defineProperty</li>
+<li>将 data 的属性代理到 vm 上</li>
+</ul>
+<h2 id="第三步：首次渲染，显示页面，且绑定依赖"><a href="#第三步：首次渲染，显示页面，且绑定依赖" class="headerlink" title="第三步：首次渲染，显示页面，且绑定依赖"></a>第三步：首次渲染，显示页面，且绑定依赖</h2><ul>
+<li>初次渲染，执行 updateComponent，执行 vm._render()</li>
+<li>执行 render 函数，会访问到 vm.list vm.title</li>
+<li>会被响应式的 get 方法监听到</li>
+<li>执行 updateComponent ，会走到 vdom 的 patch 方法</li>
+<li>patch 将 vnode 渲染成 DOM ，初次渲染完成</li>
+</ul>
+<h2 id="第四步：data属性变化，触发rerender"><a href="#第四步：data属性变化，触发rerender" class="headerlink" title="第四步：data属性变化，触发rerender"></a>第四步：data属性变化，触发rerender</h2><ul>
+<li>修改属性，被响应式的 set 监听到</li>
+<li>set 中执行 updateComponent</li>
+<li>updateComponent 重新执行 vm._render()</li>
+<li>生成的 vnode 和 prevVnode ，通过 patch 进行对比</li>
+<li>渲染到 html 中</li>
+</ul>
+
       
     </div>
     
@@ -325,8 +354,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/liaoyublog.github.io/2018/07/16/4/" rel="next" title="剑指offer——4.重建二叉树">
-                <i class="fa fa-chevron-left"></i> 剑指offer——4.重建二叉树
+              <a href="/liaoyublog.github.io/2018/08/10/MVVM/" rel="next" title="MVVM框架 - Vue.js">
+                <i class="fa fa-chevron-left"></i> MVVM框架 - Vue.js
               </a>
             
           </div>
@@ -334,10 +363,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/liaoyublog.github.io/2018/07/16/6/" rel="prev" title="剑指offer——6.旋转数组的最小数字">
-                剑指offer——6.旋转数组的最小数字 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -451,7 +476,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">1.1.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vue的整个实现流程"><span class="nav-number">1.</span> <span class="nav-text">vue的整个实现流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步：解析模板成render函数"><span class="nav-number">1.1.</span> <span class="nav-text">第一步：解析模板成render函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步：响应式开始监听"><span class="nav-number">1.2.</span> <span class="nav-text">第二步：响应式开始监听</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三步：首次渲染，显示页面，且绑定依赖"><span class="nav-number">1.3.</span> <span class="nav-text">第三步：首次渲染，显示页面，且绑定依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四步：data属性变化，触发rerender"><span class="nav-number">1.4.</span> <span class="nav-text">第四步：data属性变化，触发rerender</span></a></li></ol></li></ol></div>
             
 
           </div>
