@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="基础API - pathpath.normalize(path)path.normalize() 方法会规范化给定的 path，并解析 ‘..’ 和 ‘.’ 片段。 当发现多个连续的路径分隔符时（如 POSIX 上的 / 与 Windows 上的 \ 或 /），它们会被单个的路径分隔符（POSIX 上是 /，Windows 上是 \）替换。 末尾的多个分隔符会被保留。 如果 path 是一个长度为">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-18T07:27:43.861Z">
+<meta property="og:updated_time" content="2018-08-18T08:06:35.479Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node-path">
 <meta name="twitter:description" content="基础API - pathpath.normalize(path)path.normalize() 方法会规范化给定的 path，并解析 ‘..’ 和 ‘.’ 片段。 当发现多个连续的路径分隔符时（如 POSIX 上的 / 与 Windows 上的 \ 或 /），它们会被单个的路径分隔符（POSIX 上是 /，Windows 上是 \）替换。 末尾的多个分隔符会被保留。 如果 path 是一个长度为">
@@ -303,7 +303,7 @@
 <p>当发现多个连续的路径分隔符时（如 POSIX 上的 / 与 Windows 上的 \ 或 /），它们会被单个的路径分隔符（POSIX 上是 /，Windows 上是 \）替换。 末尾的多个分隔符会被保留。</p>
 <p>如果 path 是一个长度为零的字符串，则返回 ‘.’，表示当前工作目录。 </p>
 <h2 id="path-basename-path-ext"><a href="#path-basename-path-ext" class="headerlink" title="path.basename(path[, ext])"></a>path.basename(path[, ext])</h2><ul>
-<li>ext <string> 可选的文件扩展名</string></li>
+<li>ext &lt;string&gt; 可选的文件扩展名</li>
 </ul>
 <p>path.basename() 方法返回一个 path 的最后一部分，类似于 Unix 中的 basename 命令。 没有尾部文件分隔符，请查阅path.sep。</p>
 <p>例子：</p>
@@ -361,7 +361,7 @@
 <p>path.resolve(‘wwwroot’, ‘static_files/png/‘, ‘../gif/image.gif’);<br>// 如果当前工作目录为 /home/myself/node，<br>// 则返回 ‘/home/myself/node/wwwroot/static_files/gif/image.gif’<br>如果任何参数不是一个字符串，则抛出 TypeError。</p>
 </blockquote>
 <h1 id="path"><a href="#path" class="headerlink" title="path"></a>path</h1><ul>
-<li><strong>dirname,</strong>filenaem总是返回文件的绝对路径</li>
+<li>__dirname,__filenaem总是返回文件的绝对路径</li>
 <li>process.cwd()总是返回执行node命令所在文件夹</li>
 <li>./ 在require方法中总是相对当前文件所在文件夹。 在其他地方和process.cwd()一样，相对node启动文件夹</li>
 </ul>
@@ -398,6 +398,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/liaoyublog.github.io/2018/08/18/node-Buffer/" rel="prev" title="node-Buffer">
+                node-Buffer <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -474,7 +478,7 @@
               
                 <a href="/liaoyublog.github.io/archives/">
               
-                  <span class="site-state-item-count">71</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
