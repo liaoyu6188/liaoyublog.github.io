@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="基础API - pathpath.normalize(path)path.normalize() 方法会规范化给定的 path，并解析 ‘..’ 和 ‘.’ 片段。 当发现多个连续的路径分隔符时（如 POSIX 上的 / 与 Windows 上的 \ 或 /），它们会被单个的路径分隔符（POSIX 上是 /，Windows 上是 \）替换。 末尾的多个分隔符会被保留。 如果 path 是一个长度为">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-18T07:17:48.560Z">
+<meta property="og:updated_time" content="2018-08-18T07:27:43.861Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node-path">
 <meta name="twitter:description" content="基础API - pathpath.normalize(path)path.normalize() 方法会规范化给定的 path，并解析 ‘..’ 和 ‘.’ 片段。 当发现多个连续的路径分隔符时（如 POSIX 上的 / 与 Windows 上的 \ 或 /），它们会被单个的路径分隔符（POSIX 上是 /，Windows 上是 \）替换。 末尾的多个分隔符会被保留。 如果 path 是一个长度为">
@@ -360,6 +360,11 @@
 <blockquote>
 <p>path.resolve(‘wwwroot’, ‘static_files/png/‘, ‘../gif/image.gif’);<br>// 如果当前工作目录为 /home/myself/node，<br>// 则返回 ‘/home/myself/node/wwwroot/static_files/gif/image.gif’<br>如果任何参数不是一个字符串，则抛出 TypeError。</p>
 </blockquote>
+<h1 id="path"><a href="#path" class="headerlink" title="path"></a>path</h1><ul>
+<li><strong>dirname,</strong>filenaem总是返回文件的绝对路径</li>
+<li>process.cwd()总是返回执行node命令所在文件夹</li>
+<li>./ 在require方法中总是相对当前文件所在文件夹。 在其他地方和process.cwd()一样，相对node启动文件夹</li>
+</ul>
 
       
     </div>
@@ -506,7 +511,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础API-path"><span class="nav-number">1.</span> <span class="nav-text">基础API - path</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#path-normalize-path"><span class="nav-number">1.1.</span> <span class="nav-text">path.normalize(path)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#path-basename-path-ext"><span class="nav-number">1.2.</span> <span class="nav-text">path.basename(path[, ext])</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#path-dirname-path"><span class="nav-number">1.3.</span> <span class="nav-text">path.dirname(path)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#path-extname-path"><span class="nav-number">1.4.</span> <span class="nav-text">path.extname(path)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#path-join-…paths"><span class="nav-number">1.5.</span> <span class="nav-text">path.join([…paths])</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#path-resolve-…paths"><span class="nav-number">1.6.</span> <span class="nav-text">path.resolve([…paths])</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础API-path"><span class="nav-number">1.</span> <span class="nav-text">基础API - path</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#path-normalize-path"><span class="nav-number">1.1.</span> <span class="nav-text">path.normalize(path)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#path-basename-path-ext"><span class="nav-number">1.2.</span> <span class="nav-text">path.basename(path[, ext])</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#path-dirname-path"><span class="nav-number">1.3.</span> <span class="nav-text">path.dirname(path)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#path-extname-path"><span class="nav-number">1.4.</span> <span class="nav-text">path.extname(path)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#path-join-…paths"><span class="nav-number">1.5.</span> <span class="nav-text">path.join([…paths])</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#path-resolve-…paths"><span class="nav-number">1.6.</span> <span class="nav-text">path.resolve([…paths])</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#path"><span class="nav-number">2.</span> <span class="nav-text">path</span></a></li></ol></div>
             
 
           </div>
