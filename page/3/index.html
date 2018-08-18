@@ -229,6 +229,266 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/07/31/50/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liaoyublog.github.io/2018/07/31/50/" itemprop="url">剑指offer——50.数组中重复数字</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-31T21:54:34+08:00">
+                2018-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>在一个长度为n的数组里的所有数字都在0到n-1的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。也不知道每个数字重复几次。请找出数组中任意一个重复的数字。 例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，那么对应的输出是第一个重复的数字2。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： ES5使用对象，ES6使用map</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function duplicate(numbers, duplication)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    //这里要特别注意~找到任意重复的一个值并赋值到duplication[0]</span><br><span class="line">    //函数返回True/False</span><br><span class="line">    if(numbers==null||numbers.length&lt;2) return false</span><br><span class="line">    var obj=&#123;&#125;;</span><br><span class="line">    numbers.map(function(num)&#123;</span><br><span class="line">        if(!obj[num])&#123;</span><br><span class="line">            obj[num]=1 </span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            duplication.push(num)</span><br><span class="line">        &#125;        </span><br><span class="line">    &#125;)</span><br><span class="line">    if(duplication.length&gt;1) &#123;</span><br><span class="line">        duplication.shift();return true;</span><br><span class="line">    &#125;</span><br><span class="line">    else return false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/07/30/49/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liaoyublog.github.io/2018/07/30/49/" itemprop="url">剑指offer——49.把字符串转换成整数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-30T18:04:52+08:00">
+                2018-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>将一个字符串转换成一个整数(实现Integer.valueOf(string)的功能，但是string不符合数字要求时返回0)，要求不能使用字符串转换整数的库函数。 数值为0或者字符串不是一个合法的数值则返回0。</p>
+<p>输入描述：</p>
+<blockquote>
+<p>输入一个字符串,包括数字字母符号,可以为空 </p>
+</blockquote>
+<p>输出描述：</p>
+<blockquote>
+<p>如果是合法的数值表达则返回该数字，否则返回0</p>
+</blockquote>
+<p>示例1</p>
+<blockquote>
+<p>+2147483647<br>1a33</p>
+</blockquote>
+<p>输出</p>
+<blockquote>
+<p>2147483647<br>0</p>
+</blockquote>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： 递归</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">function StrToInt(str)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    if(str==null || str.length&lt;=0) return 0;</span><br><span class="line">    var len=str.length,index=0,flag=false;</span><br><span class="line">    var arr=str.split(&apos;&apos;)</span><br><span class="line">    if(arr[0]==&apos;+&apos;)&#123;</span><br><span class="line">        index++</span><br><span class="line">    &#125;else if(arr[0]==&apos;-&apos;)&#123;</span><br><span class="line">        flag=true</span><br><span class="line">        index++</span><br><span class="line">    &#125;       </span><br><span class="line">    var num=strToIntCore(arr,index,len,flag)</span><br><span class="line">    return num;</span><br><span class="line">&#125;</span><br><span class="line">function strToIntCore(arr,start,length,minus)&#123;</span><br><span class="line">        var number=0;</span><br><span class="line">        if(arr==null||start&gt;=length) return number;</span><br><span class="line">        while(start&lt;length)&#123;</span><br><span class="line">            if(arr[start]&gt;=&apos;0&apos;&amp;&amp; arr[start]&lt;=&apos;9&apos;)&#123;</span><br><span class="line">                var flag=minus?-1:1;</span><br><span class="line">                number=number*10+(arr[start]-&apos;0&apos;)*flag</span><br><span class="line">                start++</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                number=0;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return number;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>思路2：利用+运算符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function StrToInt(str)</span><br><span class="line">&#123;</span><br><span class="line">    let res = +str</span><br><span class="line">     </span><br><span class="line">    if (res) &#123;</span><br><span class="line">        return res</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return 0</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/07/30/48/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1194,253 +1454,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/07/28/40/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liao Yu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liaoyublog.github.io/2018/07/28/40/" itemprop="url">剑指offer——40.数组中只出现一次的数字</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-28T22:38:40+08:00">
-                2018-07-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>一个整型数组里除了两个数字之外，其他的数字都出现了偶数次。请写程序找出这两个只出现一次的数字。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： 比较数组中数字首次出现的位置和最后出现的位置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function FindNumsAppearOnce(array)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    // return list, 比如[a,b]，其中ab是出现一次的两个数字</span><br><span class="line">    var arr = [];</span><br><span class="line">    for(var i = 0; i &lt; array.length; i++) &#123;</span><br><span class="line">        if(array.indexOf(array[i]) === array.lastIndexOf(array[i])) &#123;</span><br><span class="line">            arr.push(array[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/07/27/39/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liao Yu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liaoyublog.github.io/2018/07/27/39/" itemprop="url">剑指offer——39.平衡二叉树</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-27T19:55:53+08:00">
-                2018-07-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>输入一棵二叉树，判断该二叉树是否是平衡二叉树。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： 它是一 棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。遍历左子树和右子树的深度，然后比较二者差值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function IsBalanced_Solution(pRoot)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    if(pRoot==null) return true;</span><br><span class="line">    var left=TreeDepth(pRoot.left);</span><br><span class="line">    var right=TreeDepth(pRoot.right);</span><br><span class="line">    if((left-right)&gt;1||(left-right)&lt;-1)&#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    return IsBalanced_Solution(pRoot.left)&amp;&amp;IsBalanced_Solution(pRoot.right)    </span><br><span class="line">&#125;</span><br><span class="line">function TreeDepth(root)&#123;</span><br><span class="line">    if(root==null) return 0;</span><br><span class="line">    var left=TreeDepth(root.left);</span><br><span class="line">    var right=TreeDepth(root.right);</span><br><span class="line">    return (left&gt;right)?left+1:right+1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/liaoyublog.github.io/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/liaoyublog.github.io/">1</a><a class="page-number" href="/liaoyublog.github.io/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/liaoyublog.github.io/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/liaoyublog.github.io/page/7/">7</a><a class="extend next" rel="next" href="/liaoyublog.github.io/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/liaoyublog.github.io/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/liaoyublog.github.io/">1</a><a class="page-number" href="/liaoyublog.github.io/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/liaoyublog.github.io/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/liaoyublog.github.io/page/8/">8</a><a class="extend next" rel="next" href="/liaoyublog.github.io/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1486,7 +1504,7 @@
               
                 <a href="/liaoyublog.github.io/archives/">
               
-                  <span class="site-state-item-count">69</span>
+                  <span class="site-state-item-count">71</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

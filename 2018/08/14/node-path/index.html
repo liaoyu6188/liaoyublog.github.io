@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/liaoyublog.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/liaoyublog.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/liaoyublog.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/liaoyublog.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/liaoyublog.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/liaoyublog.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/liaoyublog.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="基础API - pathpath.normalize(path)path.normalize() 方法会规范化给定的 path，并解析 ‘..’ 和 ‘.’ 片段。 当发现多个连续的路径分隔符时（如 POSIX 上的 / 与 Windows 上的 \ 或 /），它们会被单个的路径分隔符（POSIX 上是 /，Windows 上是 \）替换。 末尾的多个分隔符会被保留。 如果 path 是一个长度为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node-path">
+<meta property="og:url" content="https://liaoyu6188.github.io/liaoyublog.github.io/2018/08/14/node-path/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="基础API - pathpath.normalize(path)path.normalize() 方法会规范化给定的 path，并解析 ‘..’ 和 ‘.’ 片段。 当发现多个连续的路径分隔符时（如 POSIX 上的 / 与 Windows 上的 \ 或 /），它们会被单个的路径分隔符（POSIX 上是 /，Windows 上是 \）替换。 末尾的多个分隔符会被保留。 如果 path 是一个长度为">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-18T07:17:48.560Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node-path">
+<meta name="twitter:description" content="基础API - pathpath.normalize(path)path.normalize() 方法会规范化给定的 path，并解析 ‘..’ 和 ‘.’ 片段。 当发现多个连续的路径分隔符时（如 POSIX 上的 / 与 Windows 上的 \ 或 /），它们会被单个的路径分隔符（POSIX 上是 /，Windows 上是 \）替换。 末尾的多个分隔符会被保留。 如果 path 是一个长度为">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/liaoyublog.github.io/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liaoyu6188.github.io/liaoyublog.github.io/2018/08/14/node-path/"/>
+
+
+
+
+
+  <title>node-path | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/liaoyublog.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/liaoyublog.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/liaoyublog.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/14/node-path/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">node-path</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-14T21:13:47+08:00">
+                2018-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="基础API-path"><a href="#基础API-path" class="headerlink" title="基础API - path"></a>基础API - path</h1><h2 id="path-normalize-path"><a href="#path-normalize-path" class="headerlink" title="path.normalize(path)"></a>path.normalize(path)</h2><p>path.normalize() 方法会规范化给定的 path，并解析 ‘..’ 和 ‘.’ 片段。</p>
+<p>当发现多个连续的路径分隔符时（如 POSIX 上的 / 与 Windows 上的 \ 或 /），它们会被单个的路径分隔符（POSIX 上是 /，Windows 上是 \）替换。 末尾的多个分隔符会被保留。</p>
+<p>如果 path 是一个长度为零的字符串，则返回 ‘.’，表示当前工作目录。 </p>
+<h2 id="path-basename-path-ext"><a href="#path-basename-path-ext" class="headerlink" title="path.basename(path[, ext])"></a>path.basename(path[, ext])</h2><ul>
+<li>ext <string> 可选的文件扩展名</string></li>
+</ul>
+<p>path.basename() 方法返回一个 path 的最后一部分，类似于 Unix 中的 basename 命令。 没有尾部文件分隔符，请查阅path.sep。</p>
+<p>例子：</p>
+<blockquote>
+<p>path.basename(‘/foo/bar/baz/asdf/quux.html’);<br>// 返回: ‘quux.html’</p>
+</blockquote>
+<blockquote>
+<p>path.basename(‘/foo/bar/baz/asdf/quux.html’, ‘.html’);<br>// 返回: ‘quux’<br>如果 path 不是一个字符串或提供了 ext 但不是一个字符串，则抛出 TypeError。</p>
+</blockquote>
+<h2 id="path-dirname-path"><a href="#path-dirname-path" class="headerlink" title="path.dirname(path)"></a>path.dirname(path)</h2><p>path.dirname() 方法返回一个 path 的目录名，类似于 Unix 中的 dirname 命令。 Trailing directory separators are ignored, see path.sep.</p>
+<p>例子：</p>
+<blockquote>
+<p>path.dirname(‘/foo/bar/baz/asdf/quux’);<br>// 返回: ‘/foo/bar/baz/asdf’<br>如果 path 不是一个字符串，则抛出 TypeError。</p>
+</blockquote>
+<h2 id="path-extname-path"><a href="#path-extname-path" class="headerlink" title="path.extname(path)"></a>path.extname(path)</h2><p>path.extname() 方法返回 path 的扩展名，即从 path 的最后一部分中的最后一个 .（句号）字符到字符串结束。 如果 path 的最后一部分没有 . 或 path 的文件名（见 path.basename()）的第一个字符是 .，则返回一个空字符串。</p>
+<p>例子：</p>
+<blockquote>
+<p>path.extname(‘index.html’);<br>// 返回: ‘.html’</p>
+</blockquote>
+<blockquote>
+<p>path.extname(‘index.coffee.md’);<br>// 返回: ‘.md’</p>
+</blockquote>
+<blockquote>
+<p>path.extname(‘index.’);<br>// 返回: ‘.’</p>
+</blockquote>
+<blockquote>
+<p>path.extname(‘index’);<br>// 返回: ‘’</p>
+</blockquote>
+<blockquote>
+<p>path.extname(‘.index’);<br>// 返回: ‘’<br>如果 path 不是一个字符串，则抛出 TypeError。</p>
+</blockquote>
+<h2 id="path-join-…paths"><a href="#path-join-…paths" class="headerlink" title="path.join([…paths])"></a>path.join([…paths])</h2><p>path.join() 方法使用平台特定的分隔符把全部给定的 path 片段连接到一起，并规范化生成的路径。</p>
+<p>长度为零的 path 片段会被忽略。 如果连接后的路径字符串是一个长度为零的字符串，则返回 ‘.’，表示当前工作目录。</p>
+<p>例子：</p>
+<blockquote>
+<p>path.join(‘/foo’, ‘bar’, ‘baz/asdf’, ‘quux’, ‘..’);<br>// 返回: ‘/foo/bar/baz/asdf’</p>
+</blockquote>
+<blockquote>
+<p>path.join(‘foo’, {}, ‘bar’);<br>// 抛出 ‘TypeError: Path must be a string. Received {}’<br>如果任一路径片段不是一个字符串，则抛出 TypeError。</p>
+</blockquote>
+<h2 id="path-resolve-…paths"><a href="#path-resolve-…paths" class="headerlink" title="path.resolve([…paths])"></a>path.resolve([…paths])</h2><p>path.resolve() 方法会把一个路径或路径片段的序列解析为一个绝对路径。</p>
+<p>给定的路径的序列是从右往左被处理的，后面每个 path 被依次解析，直到构造完成一个绝对路径。 例如，给定的路径片段的序列为：/foo、/bar、baz，则调用 path.resolve(‘/foo’, ‘/bar’, ‘baz’) 会返回 /bar/baz。</p>
+<p>如果处理完全部给定的 path 片段后还未生成一个绝对路径，则当前工作目录会被用上。</p>
+<p>生成的路径是规范化后的，且末尾的斜杠会被删除，除非路径被解析为根目录。</p>
+<p>长度为零的 path 片段会被忽略。</p>
+<p>如果没有传入 path 片段，则 path.resolve() 会返回当前工作目录的绝对路径。</p>
+<p>例子：</p>
+<blockquote>
+<p>path.resolve(‘/foo/bar’, ‘./baz’);<br>// 返回: ‘/foo/bar/baz’</p>
+</blockquote>
+<blockquote>
+<p>path.resolve(‘/foo/bar’, ‘/tmp/file/‘);<br>// 返回: ‘/tmp/file’</p>
+</blockquote>
+<blockquote>
+<p>path.resolve(‘wwwroot’, ‘static_files/png/‘, ‘../gif/image.gif’);<br>// 如果当前工作目录为 /home/myself/node，<br>// 则返回 ‘/home/myself/node/wwwroot/static_files/gif/image.gif’<br>如果任何参数不是一个字符串，则抛出 TypeError。</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/liaoyublog.github.io/2018/08/13/CommonJS/" rel="next" title="CommonJS">
+                <i class="fa fa-chevron-left"></i> CommonJS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Liao Yu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/liaoyublog.github.io/archives/">
+              
+                  <span class="site-state-item-count">71</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础API-path"><span class="nav-number">1.</span> <span class="nav-text">基础API - path</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#path-normalize-path"><span class="nav-number">1.1.</span> <span class="nav-text">path.normalize(path)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#path-basename-path-ext"><span class="nav-number">1.2.</span> <span class="nav-text">path.basename(path[, ext])</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#path-dirname-path"><span class="nav-number">1.3.</span> <span class="nav-text">path.dirname(path)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#path-extname-path"><span class="nav-number">1.4.</span> <span class="nav-text">path.extname(path)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#path-join-…paths"><span class="nav-number">1.5.</span> <span class="nav-text">path.join([…paths])</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#path-resolve-…paths"><span class="nav-number">1.6.</span> <span class="nav-text">path.resolve([…paths])</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liao Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/liaoyublog.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/liaoyublog.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/liaoyublog.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/liaoyublog.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/liaoyublog.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/liaoyublog.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/liaoyublog.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/liaoyublog.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/liaoyublog.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/liaoyublog.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/liaoyublog.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/liaoyublog.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/liaoyublog.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

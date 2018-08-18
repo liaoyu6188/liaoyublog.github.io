@@ -229,6 +229,314 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/14/node-path/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liaoyublog.github.io/2018/08/14/node-path/" itemprop="url">node-path</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-14T21:13:47+08:00">
+                2018-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="基础API-path"><a href="#基础API-path" class="headerlink" title="基础API - path"></a>基础API - path</h1><h2 id="path-normalize-path"><a href="#path-normalize-path" class="headerlink" title="path.normalize(path)"></a>path.normalize(path)</h2><p>path.normalize() 方法会规范化给定的 path，并解析 ‘..’ 和 ‘.’ 片段。</p>
+<p>当发现多个连续的路径分隔符时（如 POSIX 上的 / 与 Windows 上的 \ 或 /），它们会被单个的路径分隔符（POSIX 上是 /，Windows 上是 \）替换。 末尾的多个分隔符会被保留。</p>
+<p>如果 path 是一个长度为零的字符串，则返回 ‘.’，表示当前工作目录。 </p>
+<h2 id="path-basename-path-ext"><a href="#path-basename-path-ext" class="headerlink" title="path.basename(path[, ext])"></a>path.basename(path[, ext])</h2><ul>
+<li>ext <string> 可选的文件扩展名</string></li>
+</ul>
+<p>path.basename() 方法返回一个 path 的最后一部分，类似于 Unix 中的 basename 命令。 没有尾部文件分隔符，请查阅path.sep。</p>
+<p>例子：</p>
+<blockquote>
+<p>path.basename(‘/foo/bar/baz/asdf/quux.html’);<br>// 返回: ‘quux.html’</p>
+</blockquote>
+<blockquote>
+<p>path.basename(‘/foo/bar/baz/asdf/quux.html’, ‘.html’);<br>// 返回: ‘quux’<br>如果 path 不是一个字符串或提供了 ext 但不是一个字符串，则抛出 TypeError。</p>
+</blockquote>
+<h2 id="path-dirname-path"><a href="#path-dirname-path" class="headerlink" title="path.dirname(path)"></a>path.dirname(path)</h2><p>path.dirname() 方法返回一个 path 的目录名，类似于 Unix 中的 dirname 命令。 Trailing directory separators are ignored, see path.sep.</p>
+<p>例子：</p>
+<blockquote>
+<p>path.dirname(‘/foo/bar/baz/asdf/quux’);<br>// 返回: ‘/foo/bar/baz/asdf’<br>如果 path 不是一个字符串，则抛出 TypeError。</p>
+</blockquote>
+<h2 id="path-extname-path"><a href="#path-extname-path" class="headerlink" title="path.extname(path)"></a>path.extname(path)</h2><p>path.extname() 方法返回 path 的扩展名，即从 path 的最后一部分中的最后一个 .（句号）字符到字符串结束。 如果 path 的最后一部分没有 . 或 path 的文件名（见 path.basename()）的第一个字符是 .，则返回一个空字符串。</p>
+<p>例子：</p>
+<blockquote>
+<p>path.extname(‘index.html’);<br>// 返回: ‘.html’</p>
+</blockquote>
+<blockquote>
+<p>path.extname(‘index.coffee.md’);<br>// 返回: ‘.md’</p>
+</blockquote>
+<blockquote>
+<p>path.extname(‘index.’);<br>// 返回: ‘.’</p>
+</blockquote>
+<blockquote>
+<p>path.extname(‘index’);<br>// 返回: ‘’</p>
+</blockquote>
+<blockquote>
+<p>path.extname(‘.index’);<br>// 返回: ‘’<br>如果 path 不是一个字符串，则抛出 TypeError。</p>
+</blockquote>
+<h2 id="path-join-…paths"><a href="#path-join-…paths" class="headerlink" title="path.join([…paths])"></a>path.join([…paths])</h2><p>path.join() 方法使用平台特定的分隔符把全部给定的 path 片段连接到一起，并规范化生成的路径。</p>
+<p>长度为零的 path 片段会被忽略。 如果连接后的路径字符串是一个长度为零的字符串，则返回 ‘.’，表示当前工作目录。</p>
+<p>例子：</p>
+<blockquote>
+<p>path.join(‘/foo’, ‘bar’, ‘baz/asdf’, ‘quux’, ‘..’);<br>// 返回: ‘/foo/bar/baz/asdf’</p>
+</blockquote>
+<blockquote>
+<p>path.join(‘foo’, {}, ‘bar’);<br>// 抛出 ‘TypeError: Path must be a string. Received {}’<br>如果任一路径片段不是一个字符串，则抛出 TypeError。</p>
+</blockquote>
+<h2 id="path-resolve-…paths"><a href="#path-resolve-…paths" class="headerlink" title="path.resolve([…paths])"></a>path.resolve([…paths])</h2><p>path.resolve() 方法会把一个路径或路径片段的序列解析为一个绝对路径。</p>
+<p>给定的路径的序列是从右往左被处理的，后面每个 path 被依次解析，直到构造完成一个绝对路径。 例如，给定的路径片段的序列为：/foo、/bar、baz，则调用 path.resolve(‘/foo’, ‘/bar’, ‘baz’) 会返回 /bar/baz。</p>
+<p>如果处理完全部给定的 path 片段后还未生成一个绝对路径，则当前工作目录会被用上。</p>
+<p>生成的路径是规范化后的，且末尾的斜杠会被删除，除非路径被解析为根目录。</p>
+<p>长度为零的 path 片段会被忽略。</p>
+<p>如果没有传入 path 片段，则 path.resolve() 会返回当前工作目录的绝对路径。</p>
+<p>例子：</p>
+<blockquote>
+<p>path.resolve(‘/foo/bar’, ‘./baz’);<br>// 返回: ‘/foo/bar/baz’</p>
+</blockquote>
+<blockquote>
+<p>path.resolve(‘/foo/bar’, ‘/tmp/file/‘);<br>// 返回: ‘/tmp/file’</p>
+</blockquote>
+<blockquote>
+<p>path.resolve(‘wwwroot’, ‘static_files/png/‘, ‘../gif/image.gif’);<br>// 如果当前工作目录为 /home/myself/node，<br>// 则返回 ‘/home/myself/node/wwwroot/static_files/gif/image.gif’<br>如果任何参数不是一个字符串，则抛出 TypeError。</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/13/CommonJS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liaoyublog.github.io/2018/08/13/CommonJS/" itemprop="url">CommonJS</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-13T21:34:38+08:00">
+                2018-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h1><ul>
+<li>每个文件是一个模块，有自己的作用域</li>
+<li>在模块内部module变量代表模块本身</li>
+<li>module.exports属性代表模块对外接口</li>
+</ul>
+<h2 id="require特性"><a href="#require特性" class="headerlink" title="require特性"></a>require特性</h2><ul>
+<li>module被加载的时候执行，加载后缓存</li>
+<li>一旦出现某个模块被循环加载，就只输出已执行的部分，还未执行的部分不会输出</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/12/vue的整个实现流程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1277,253 +1585,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/03/60/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liao Yu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liaoyublog.github.io/2018/08/03/60/" itemprop="url">剑指offer——60.把二叉树打印成多行</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-03T18:39:09+08:00">
-                2018-08-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>从上到下按层打印二叉树，同一层结点从左至右输出。每一层输出一行。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： 采用队列数据结构，同时需要两个变量分别存储这一层和下一层结点个数。当前层结点个数为零时，则输出结点</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">/* function TreeNode(x) &#123;</span><br><span class="line">    this.val = x;</span><br><span class="line">    this.left = null;</span><br><span class="line">    this.right = null;</span><br><span class="line">&#125; */</span><br><span class="line">function Print(pRoot)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    var queue = [];//存储节点队列</span><br><span class="line">    var result = [];</span><br><span class="line">    if(pRoot==null) return result;</span><br><span class="line">    var nextLevel = 0;</span><br><span class="line">    queue.push(pRoot);</span><br><span class="line">    var toBePrinted = 1;//每一行节点个数</span><br><span class="line">    var arr = [];</span><br><span class="line">    while(queue.length)&#123;</span><br><span class="line">        var temp = queue.shift();</span><br><span class="line">        toBePrinted--;</span><br><span class="line">        arr.push(temp.val);</span><br><span class="line">        if(temp.left)&#123;</span><br><span class="line">            queue.push(temp.left);</span><br><span class="line">            nextLevel++;</span><br><span class="line">        &#125;</span><br><span class="line">        if(temp.right)&#123;</span><br><span class="line">            queue.push(temp.right);</span><br><span class="line">            nextLevel++;</span><br><span class="line">        &#125;</span><br><span class="line">        if(toBePrinted==0)&#123;</span><br><span class="line">            toBePrinted=nextLevel;</span><br><span class="line">            nextLevel=0;</span><br><span class="line">            result.push(arr);</span><br><span class="line">            arr = [];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/03/59/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liao Yu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liaoyublog.github.io/2018/08/03/59/" itemprop="url">剑指offer——59.按之字形顺序打印二叉树</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-03T18:39:04+08:00">
-                2018-08-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>请实现一个函数按照之字形打印二叉树，即第一行按照从左到右的顺序打印，第二层按照从右至左的顺序打印，第三行按照从左到右的顺序打印，其他行以此类推。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： 按深度遍历二叉树，深度（从0开始）为奇数的反转加入数组。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">/* function TreeNode(x) &#123;</span><br><span class="line">    this.val = x;</span><br><span class="line">    this.left = null;</span><br><span class="line">    this.right = null;</span><br><span class="line">&#125; */</span><br><span class="line">function Print(pRoot)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    var queue = [];//存储节点队列</span><br><span class="line">    var result = [];</span><br><span class="line">    if(pRoot==null) return result;</span><br><span class="line">    var nextLevel = 0;</span><br><span class="line">    queue.push(pRoot);</span><br><span class="line">    var toBePrinted = 1;//每一行节点个数</span><br><span class="line">    var level = 0;//深度</span><br><span class="line">    var arr = [];</span><br><span class="line">    while(queue.length)&#123;</span><br><span class="line">        var temp = queue.shift();</span><br><span class="line">        toBePrinted--;</span><br><span class="line">        arr.push(temp.val);</span><br><span class="line">        if(temp.left)&#123;</span><br><span class="line">            queue.push(temp.left);</span><br><span class="line">            nextLevel++;</span><br><span class="line">        &#125;</span><br><span class="line">        if(temp.right)&#123;</span><br><span class="line">            queue.push(temp.right);</span><br><span class="line">            nextLevel++;</span><br><span class="line">        &#125;</span><br><span class="line">        if(toBePrinted==0)&#123;</span><br><span class="line">            toBePrinted=nextLevel;</span><br><span class="line">            nextLevel=0;</span><br><span class="line">            level++;</span><br><span class="line">            if(level%2==0)&#123;</span><br><span class="line">                arr.reverse();</span><br><span class="line">            &#125;</span><br><span class="line">            result.push(arr);</span><br><span class="line">            arr = [];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/liaoyublog.github.io/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/liaoyublog.github.io/page/7/">7</a><a class="extend next" rel="next" href="/liaoyublog.github.io/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/liaoyublog.github.io/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/liaoyublog.github.io/page/8/">8</a><a class="extend next" rel="next" href="/liaoyublog.github.io/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1569,7 +1635,7 @@
               
                 <a href="/liaoyublog.github.io/archives/">
               
-                  <span class="site-state-item-count">69</span>
+                  <span class="site-state-item-count">71</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
