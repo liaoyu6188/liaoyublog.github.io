@@ -229,6 +229,180 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/19/ndoe-fs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liaoyublog.github.io/2018/08/19/ndoe-fs/" itemprop="url">ndoe-fs</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-19T20:59:49+08:00">
+                2018-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="fs-文件系统"><a href="#fs-文件系统" class="headerlink" title="fs-文件系统"></a>fs-文件系统</h1><p>fs 模块提供了一些 API，用于以一种类似标准 POSIX 函数的方式与文件系统进行交互。</p>
+<p>用法如下：</p>
+<p>const fs = require(‘fs’);<br>所有的文件系统操作都有异步和同步两种形式。</p>
+<p>异步形式的最后一个参数都是完成时回调函数。 传给回调函数的参数取决于具体方法，但回调函数的第一个参数都会保留给异常。 如果操作成功完成，则第一个参数会是 null 或 undefined。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&apos;fs&apos;);</span><br><span class="line"></span><br><span class="line">fs.unlink(&apos;/tmp/hello&apos;, (err) =&gt; &#123;</span><br><span class="line">  if (err) throw err;</span><br><span class="line">  console.log(&apos;成功删除 /tmp/hello&apos;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>当使用同步操作时，任何异常都会被立即抛出，可以使用 try/catch 来处理异常，或让异常向上冒泡。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&apos;fs&apos;);</span><br><span class="line"></span><br><span class="line">try &#123;</span><br><span class="line">  fs.unlinkSync(&apos;/tmp/hello&apos;);</span><br><span class="line">  console.log(&apos;successfully deleted /tmp/hello&apos;);</span><br><span class="line">&#125; catch (err) &#123;</span><br><span class="line">  // handle the error</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="fs-readFile-path-options-callback"><a href="#fs-readFile-path-options-callback" class="headerlink" title="fs.readFile(path[, options], callback)"></a>fs.readFile(path[, options], callback)</h2><ul>
+<li>path &lt;string&gt; | &lt;Buffer&gt; | &lt;URL&gt; | &lt;integer&gt; 文件名或文件描述符。</li>
+<li><p>options &lt;Object&gt; | &lt;string&gt;</p>
+<ul>
+<li>encoding &lt;string&gt; | &lt;null&gt; 默认为 null。</li>
+<li><p>flag &lt;string&gt; 详见支持的文件系统flag。默认为 ‘r’。<br>*callback &lt;Function&gt;</p>
+</li>
+<li><p>err &lt;Error&gt;</p>
+</li>
+<li>data &lt;string&gt; | &lt;Buffer&gt;<br>异步地读取一个文件的全部内容。 例子：</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>fs.readFile(‘/etc/passwd’, (err, data) =&gt; {<br> if (err) throw err;<br> console.log(data);<br>});<br>回调有两个参数 (err, data)，其中 data 是文件的内容。</p>
+</blockquote>
+<p>如果未指定字符编码，则返回原始的 buffer。</p>
+<p>如果 options 是一个字符串，则它指定了字符编码。 例子：</p>
+<blockquote>
+<p>fs.readFile(‘/etc/passwd’, ‘utf8’, callback);</p>
+</blockquote>
+<h2 id="fs-writeFile-file-data-options-callback"><a href="#fs-writeFile-file-data-options-callback" class="headerlink" title="fs.writeFile(file, data[, options], callback)"></a>fs.writeFile(file, data[, options], callback)</h2><ul>
+<li>file &lt;string&gt; | &lt;Buffer&gt; | &lt;URL&gt; | &lt;integer&gt; 文件名或文件描述符。</li>
+<li>data &lt;string&gt; | &lt;Buffer&gt; | &lt;Uint8Array&gt;</li>
+<li><p>options &lt;Object&gt; | &lt;string&gt;</p>
+<ul>
+<li>encoding &lt;string&gt; | &lt;null&gt; 默认为 ‘utf8’。</li>
+<li>mode &lt;integer&gt; 默认为 0o666。</li>
+<li>flag &lt;string&gt; 详见支持的文件系统flag。默认为 ‘w’。</li>
+</ul>
+</li>
+<li><p>callback &lt;Function&gt;</p>
+<ul>
+<li>err <error></error></li>
+</ul>
+</li>
+</ul>
+<p>异步地写入数据到文件，如果文件已经存在，则覆盖文件。 data 可以是字符串或 buffer。</p>
+<p>如果 data 是一个 buffer，则 encoding 选项无效。</p>
+<p>例子：</p>
+<blockquote>
+<p>fs.writeFile(‘文件名.txt’, ‘Node.js 中文网’, (err) =&gt; {<br> if (err) throw err;<br> console.log(‘文件已保存！’);<br>});<br>如果 options 是一个字符串，则它指定了字符编码。例子：</p>
+</blockquote>
+<blockquote>
+<p>fs.writeFile(‘文件名.txt’, ‘Node.js 中文网’, ‘utf8’, callback);<br>任何指定的文件描述符必须支持写入。</p>
+</blockquote>
+<p>对同一文件多次使用 fs.writeFile 且不等待回调，是不安全的。 对于这种情况，建议使用 fs.createWriteStream。</p>
+<p>如果 file 是一个文件描述符，则它不会被自动关闭。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/18/node-events/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1548,130 +1722,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/04/63/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liao Yu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liaoyublog.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liaoyublog.github.io/2018/08/04/63/" itemprop="url">剑指offer——63.数据流中的中位数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-04T21:52:53+08:00">
-                2018-08-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。我们使用Insert()方法读取数据流，使用GetMedian()方法获取当前读取数据的中位数。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路1：先排序，然后直接找中间那个值。如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var arr=[]</span><br><span class="line">function Insert(num)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    arr.push(num);</span><br><span class="line">    arr.sort()</span><br><span class="line">&#125;</span><br><span class="line">function GetMedian()&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    var len=arr.length;</span><br><span class="line">    if(len%2!=0)&#123;</span><br><span class="line">        return arr[Math.floor(len/2)];</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return (arr[len/2-1]+arr[len/2])/2</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>思路2： 大小顶堆，数据流传输时，第偶个数，存入大顶堆中，然后将大顶堆中最大元素取出放入小顶堆中，第奇个数，存入小顶堆，然后将小顶堆中最小元素取出放入大顶堆中。最后小顶堆存放的元素都大于大顶堆存放元素。</p>
-<p>当数量为偶数时候，访问大顶堆中最大元素和小顶堆中最小元素平均值，当数量为奇数时，访问小顶堆中最小元素。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">var arr1=[],arr2=[],count=0;</span><br><span class="line">function Insert(num)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    if(count%2==0)&#123;</span><br><span class="line">        arr1.push(num);</span><br><span class="line">        arr1.sort(function(a,b)&#123;</span><br><span class="line">            return a-b;</span><br><span class="line">        &#125;)</span><br><span class="line">        arr2.push(arr1.pop());</span><br><span class="line">        arr2.sort(function(a,b)&#123;</span><br><span class="line">            return b-a;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        arr2.push(num);</span><br><span class="line">        arr2.sort(function(a,b)&#123;</span><br><span class="line">            return b-a;</span><br><span class="line">        &#125;)</span><br><span class="line">        arr1.push(arr2.pop());</span><br><span class="line">        arr1.sort(function(a,b)&#123;</span><br><span class="line">            return a-b;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    count++</span><br><span class="line">&#125;</span><br><span class="line">function GetMedian()&#123;</span><br><span class="line">    // write code here</span><br><span class="line"></span><br><span class="line">    if(count%2!=0)&#123;</span><br><span class="line">        return arr2[arr2.length-1]</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return (arr1[arr1.length-1]+arr2[arr2.length-1])/2</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1722,7 +1772,7 @@
               
                 <a href="/liaoyublog.github.io/archives/">
               
-                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-count">74</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
