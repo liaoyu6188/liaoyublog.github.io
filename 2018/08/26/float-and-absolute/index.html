@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="题目描述请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”,”5e2”,”-123”,”3.1416”和”-1E-16”都表示数值。 但是”12e”,”1a3.14”,”1.2.3”,”+-5”和”12e+4.3”都不是。 代码思路： 正则表达式 1return s.match(/[\+\-]?[0-9]*(\.[0-9]*)?([eE][\+-]?[0-9]+)">
+<meta name="description" content="由一个问题：’absolute的实现原理’ 引发的思考先看了一下这篇文章CSS绝对定位absolute详解然后接着看了这篇文章CSS浮动float详解就想着来总结一下学到的东西 两者的相同点包裹性：就是block元素不指定width的话，默认是100% ，如果给元素设置了absolute和float相当于给元素加上了display:block;。可以理解为像inline元素一样产生包裹性，宽度会跟">
 <meta property="og:type" content="article">
-<meta property="og:title" content="剑指offer——53.表示数值的字符串">
-<meta property="og:url" content="https://liaoyu6188.github.io/liaoyublog.github.io/2018/08/01/53/index.html">
+<meta property="og:title" content="float and absolute">
+<meta property="og:url" content="https://liaoyu6188.github.io/liaoyublog.github.io/2018/08/26/float-and-absolute/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="题目描述请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”,”5e2”,”-123”,”3.1416”和”-1E-16”都表示数值。 但是”12e”,”1a3.14”,”1.2.3”,”+-5”和”12e+4.3”都不是。 代码思路： 正则表达式 1return s.match(/[\+\-]?[0-9]*(\.[0-9]*)?([eE][\+-]?[0-9]+)">
+<meta property="og:description" content="由一个问题：’absolute的实现原理’ 引发的思考先看了一下这篇文章CSS绝对定位absolute详解然后接着看了这篇文章CSS浮动float详解就想着来总结一下学到的东西 两者的相同点包裹性：就是block元素不指定width的话，默认是100% ，如果给元素设置了absolute和float相当于给元素加上了display:block;。可以理解为像inline元素一样产生包裹性，宽度会跟">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-01T14:56:56.372Z">
+<meta property="og:updated_time" content="2018-08-26T03:29:26.354Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="剑指offer——53.表示数值的字符串">
-<meta name="twitter:description" content="题目描述请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”,”5e2”,”-123”,”3.1416”和”-1E-16”都表示数值。 但是”12e”,”1a3.14”,”1.2.3”,”+-5”和”12e+4.3”都不是。 代码思路： 正则表达式 1return s.match(/[\+\-]?[0-9]*(\.[0-9]*)?([eE][\+-]?[0-9]+)">
+<meta name="twitter:title" content="float and absolute">
+<meta name="twitter:description" content="由一个问题：’absolute的实现原理’ 引发的思考先看了一下这篇文章CSS绝对定位absolute详解然后接着看了这篇文章CSS浮动float详解就想着来总结一下学到的东西 两者的相同点包裹性：就是block元素不指定width的话，默认是100% ，如果给元素设置了absolute和float相当于给元素加上了display:block;。可以理解为像inline元素一样产生包裹性，宽度会跟">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://liaoyu6188.github.io/liaoyublog.github.io/2018/08/01/53/"/>
+  <link rel="canonical" href="https://liaoyu6188.github.io/liaoyublog.github.io/2018/08/26/float-and-absolute/"/>
 
 
 
 
 
-  <title>剑指offer——53.表示数值的字符串 | Hexo</title>
+  <title>float and absolute | Hexo</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/01/53/">
+    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/26/float-and-absolute/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liao Yu">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">剑指offer——53.表示数值的字符串</h1>
+          <h1 class="post-title" itemprop="name headline">float and absolute</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-01T22:53:40+08:00">
-                2018-08-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-26T11:09:50+08:00">
+                2018-08-26
               </time>
             
 
@@ -299,9 +299,9 @@
       
 
       
-        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”,”5e2”,”-123”,”3.1416”和”-1E-16”都表示数值。 但是”12e”,”1a3.14”,”1.2.3”,”+-5”和”12e+4.3”都不是。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： 正则表达式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">return s.match(/[\+\-]?[0-9]*(\.[0-9]*)?([eE][\+-]?[0-9]+)?/g)[0]==s;</span><br></pre></td></tr></table></figure>
+        <h1 id="由一个问题：’absolute的实现原理’-引发的思考"><a href="#由一个问题：’absolute的实现原理’-引发的思考" class="headerlink" title="由一个问题：’absolute的实现原理’ 引发的思考"></a>由一个问题：’absolute的实现原理’ 引发的思考</h1><p>先看了一下这篇文章<a href="https://www.jianshu.com/p/a3da5e27d22b" target="_blank" rel="noopener">CSS绝对定位absolute详解</a><br>然后接着看了这篇文章<a href="https://www.jianshu.com/p/07eb19957991" target="_blank" rel="noopener">CSS浮动float详解</a><br>就想着来总结一下学到的东西</p>
+<h1 id="两者的相同点"><a href="#两者的相同点" class="headerlink" title="两者的相同点"></a>两者的相同点</h1><h2 id="包裹性：就是block元素不指定width的话，默认是100-，如果给元素设置了absolute和float相当于给元素加上了display-block-。可以理解为像inline元素一样产生包裹性，宽度会跟随内容自适应。"><a href="#包裹性：就是block元素不指定width的话，默认是100-，如果给元素设置了absolute和float相当于给元素加上了display-block-。可以理解为像inline元素一样产生包裹性，宽度会跟随内容自适应。" class="headerlink" title="包裹性：就是block元素不指定width的话，默认是100% ，如果给元素设置了absolute和float相当于给元素加上了display:block;。可以理解为像inline元素一样产生包裹性，宽度会跟随内容自适应。"></a>包裹性：就是block元素不指定width的话，默认是100% ，如果给元素设置了absolute和float相当于给元素加上了display:block;。可以理解为像inline元素一样产生包裹性，宽度会跟随内容自适应。</h2><h2 id="高度欺骗：欺骗父元素，让其父元素误以为其高度塌陷了"><a href="#高度欺骗：欺骗父元素，让其父元素误以为其高度塌陷了" class="headerlink" title="高度欺骗：欺骗父元素，让其父元素误以为其高度塌陷了"></a>高度欺骗：欺骗父元素，让其父元素误以为其高度塌陷了</h2><h1 id="两者相同点中的不同点"><a href="#两者相同点中的不同点" class="headerlink" title="两者相同点中的不同点"></a>两者相同点中的不同点</h1><p>absolute其实已经不能算是欺骗父元素了，而是出现了层级关系，就是完全脱离了文档流，而float元素虽然也算脱离文档流，但本身仍在文档流中占有位置，即半脱离。</p>
+
       
     </div>
     
@@ -325,8 +325,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/liaoyublog.github.io/2018/07/31/52/" rel="next" title="剑指offer——52.正则表达式匹配">
-                <i class="fa fa-chevron-left"></i> 剑指offer——52.正则表达式匹配
+              <a href="/liaoyublog.github.io/2018/08/23/get和post的区别/" rel="next" title="get和post的区别">
+                <i class="fa fa-chevron-left"></i> get和post的区别
               </a>
             
           </div>
@@ -334,10 +334,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/liaoyublog.github.io/2018/08/01/54/" rel="prev" title="剑指offer——54.字符流中第一个不重复的字符">
-                剑指offer——54.字符流中第一个不重复的字符 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -451,7 +447,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">1.1.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#由一个问题：’absolute的实现原理’-引发的思考"><span class="nav-number">1.</span> <span class="nav-text">由一个问题：’absolute的实现原理’ 引发的思考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#两者的相同点"><span class="nav-number">2.</span> <span class="nav-text">两者的相同点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#包裹性：就是block元素不指定width的话，默认是100-，如果给元素设置了absolute和float相当于给元素加上了display-block-。可以理解为像inline元素一样产生包裹性，宽度会跟随内容自适应。"><span class="nav-number">2.1.</span> <span class="nav-text">包裹性：就是block元素不指定width的话，默认是100% ，如果给元素设置了absolute和float相当于给元素加上了display:block;。可以理解为像inline元素一样产生包裹性，宽度会跟随内容自适应。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高度欺骗：欺骗父元素，让其父元素误以为其高度塌陷了"><span class="nav-number">2.2.</span> <span class="nav-text">高度欺骗：欺骗父元素，让其父元素误以为其高度塌陷了</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#两者相同点中的不同点"><span class="nav-number">3.</span> <span class="nav-text">两者相同点中的不同点</span></a></li></ol></div>
             
 
           </div>
