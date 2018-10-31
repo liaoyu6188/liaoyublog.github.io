@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="题目描述输入一个链表，反转链表后，输出新链表的表头。 代码思路：  1234567891011121314function ReverseList(phead)&amp;#123;    // write code here    if(phead===null||phead.next===null) return phead;    var prev=null;    var next=null;">
+<meta name="description" content="题目描述输入一个链表，反转链表后，输出新链表的表头。 代码思路：  1234567891011121314function ReverseList(pHead)&amp;#123;    // write code here    if(pHead == null || pHead.next == null) return pHead;    var prev = null;    var next =">
 <meta property="og:type" content="article">
 <meta property="og:title" content="剑指offer——15.反转链表">
 <meta property="og:url" content="https://liaoyu6188.github.io/liaoyublog.github.io/2018/07/19/15/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="题目描述输入一个链表，反转链表后，输出新链表的表头。 代码思路：  1234567891011121314function ReverseList(phead)&amp;#123;    // write code here    if(phead===null||phead.next===null) return phead;    var prev=null;    var next=null;">
+<meta property="og:description" content="题目描述输入一个链表，反转链表后，输出新链表的表头。 代码思路：  1234567891011121314function ReverseList(pHead)&amp;#123;    // write code here    if(pHead == null || pHead.next == null) return pHead;    var prev = null;    var next =">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-19T13:54:04.653Z">
+<meta property="og:updated_time" content="2018-10-31T15:47:34.318Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指offer——15.反转链表">
-<meta name="twitter:description" content="题目描述输入一个链表，反转链表后，输出新链表的表头。 代码思路：  1234567891011121314function ReverseList(phead)&amp;#123;    // write code here    if(phead===null||phead.next===null) return phead;    var prev=null;    var next=null;">
+<meta name="twitter:description" content="题目描述输入一个链表，反转链表后，输出新链表的表头。 代码思路：  1234567891011121314function ReverseList(pHead)&amp;#123;    // write code here    if(pHead == null || pHead.next == null) return pHead;    var prev = null;    var next =">
 
 
 
@@ -301,7 +301,7 @@
       
         <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>输入一个链表，反转链表后，输出新链表的表头。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function ReverseList(phead)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    if(phead===null||phead.next===null) return phead;</span><br><span class="line">    var prev=null;</span><br><span class="line">    var next=null;</span><br><span class="line">    while(phead!=null)&#123;</span><br><span class="line">        next=phead.next;</span><br><span class="line">        phead.next=prev;</span><br><span class="line">        prev=phead;</span><br><span class="line">        phead=next;</span><br><span class="line">    &#125;</span><br><span class="line">    return prev;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function ReverseList(pHead)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    if(pHead == null || pHead.next == null) return pHead;</span><br><span class="line">    var prev = null;</span><br><span class="line">    var next = null;</span><br><span class="line">    while(pHead !== null)&#123;</span><br><span class="line">        next = pHead.next;</span><br><span class="line">        pHead.next = prev;</span><br><span class="line">        prev = pHead;</span><br><span class="line">        pHead = next;</span><br><span class="line">    &#125;</span><br><span class="line">    return prev;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -414,7 +414,7 @@
               
                 <a href="/liaoyublog.github.io/archives/">
               
-                  <span class="site-state-item-count">76</span>
+                  <span class="site-state-item-count">77</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

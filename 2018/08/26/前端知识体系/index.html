@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Buffer Buffer用于处理二进制数据流 实例类似整数数组，大小固定 C++代码在V8堆外分配物理内存  类方法：Buffer.alloc(size[, fill[, encoding]]) size &amp;lt;integer&amp;gt; 新建的 Buffer 期望的长度 fill &amp;lt;string&amp;gt; | &amp;lt;Buffer&amp;gt; | &amp;lt;integer&amp;gt; 用来预填充新建的">
+<meta name="description" content="题目描述代码思路：  12">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node-Buffer">
-<meta property="og:url" content="https://liaoyu6188.github.io/liaoyublog.github.io/2018/08/16/node-Buffer/index.html">
+<meta property="og:title" content="前端知识体系">
+<meta property="og:url" content="https://liaoyu6188.github.io/liaoyublog.github.io/2018/08/26/前端知识体系/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Buffer Buffer用于处理二进制数据流 实例类似整数数组，大小固定 C++代码在V8堆外分配物理内存  类方法：Buffer.alloc(size[, fill[, encoding]]) size &amp;lt;integer&amp;gt; 新建的 Buffer 期望的长度 fill &amp;lt;string&amp;gt; | &amp;lt;Buffer&amp;gt; | &amp;lt;integer&amp;gt; 用来预填充新建的">
+<meta property="og:description" content="题目描述代码思路：  12">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-18T08:18:25.133Z">
+<meta property="og:updated_time" content="2018-08-26T03:41:02.784Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="node-Buffer">
-<meta name="twitter:description" content="Buffer Buffer用于处理二进制数据流 实例类似整数数组，大小固定 C++代码在V8堆外分配物理内存  类方法：Buffer.alloc(size[, fill[, encoding]]) size &amp;lt;integer&amp;gt; 新建的 Buffer 期望的长度 fill &amp;lt;string&amp;gt; | &amp;lt;Buffer&amp;gt; | &amp;lt;integer&amp;gt; 用来预填充新建的">
+<meta name="twitter:title" content="前端知识体系">
+<meta name="twitter:description" content="题目描述代码思路：  12">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://liaoyu6188.github.io/liaoyublog.github.io/2018/08/16/node-Buffer/"/>
+  <link rel="canonical" href="https://liaoyu6188.github.io/liaoyublog.github.io/2018/08/26/前端知识体系/"/>
 
 
 
 
 
-  <title>node-Buffer | Hexo</title>
+  <title>前端知识体系 | Hexo</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/16/node-Buffer/">
+    <link itemprop="mainEntityOfPage" href="https://liaoyu6188.github.io/liaoyublog.github.io/liaoyublog.github.io/2018/08/26/前端知识体系/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liao Yu">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">node-Buffer</h1>
+          <h1 class="post-title" itemprop="name headline">前端知识体系</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-16T15:28:56+08:00">
-                2018-08-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-26T11:41:02+08:00">
+                2018-08-26
               </time>
             
 
@@ -299,88 +299,8 @@
       
 
       
-        <h1 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a>Buffer</h1><ul>
-<li>Buffer用于处理二进制数据流</li>
-<li>实例类似整数数组，大小固定</li>
-<li>C++代码在V8堆外分配物理内存</li>
-</ul>
-<h2 id="类方法：Buffer-alloc-size-fill-encoding"><a href="#类方法：Buffer-alloc-size-fill-encoding" class="headerlink" title="类方法：Buffer.alloc(size[, fill[, encoding]])"></a>类方法：Buffer.alloc(size[, fill[, encoding]])</h2><ul>
-<li>size &lt;integer&gt; 新建的 Buffer 期望的长度</li>
-<li>fill &lt;string&gt; | &lt;Buffer&gt; | &lt;integer&gt; 用来预填充新建的 Buffer 的值。 默认: 0</li>
-<li>encoding &lt;string&gt; 如果 fill 是字符串，则该值是它的字符编码。 默认: ‘utf8’<br>分配一个大小为 size 字节的新建的 Buffer 。 如果 fill 为 undefined ，则该 Buffer 会用 0 填充。</li>
-</ul>
-<p>例子：</p>
-<blockquote>
-<p>const buf = Buffer.alloc(5);<br>// 输出: <buffer 00=""><br>console.log(buf);<br>分配一个大小为 size 字节的新建的 Buffer 。 如果 size 大于 buffer.constants.MAX_LENGTH 或小于 0，则抛出 [RangeError] 错误。 如果 size 为 0，则创建一个长度为 0 的 Buffer。</buffer></p>
-</blockquote>
-<h2 id="类方法：Buffer-byteLength-string-encoding"><a href="#类方法：Buffer-byteLength-string-encoding" class="headerlink" title="类方法：Buffer.byteLength(string[, encoding])"></a>类方法：Buffer.byteLength(string[, encoding])</h2><ul>
-<li>string &lt;string&gt; | &lt;Buffer&gt; | &lt;TypedArray&gt;| &lt;DataView&gt; | &lt;ArrayBuffer&gt; | &lt;SharedArrayBuffer&gt; 要计算长度的值</li>
-<li>encoding &lt;string&gt; 如果 string 是字符串，则这是它的字符编码。 默认: ‘utf8’<br>*返回: &lt;integer&gt; string 包含的字节数<br>返回一个字符串的实际字节长度。 这与 String.prototype.length 不同，因为那返回字符串的字符数。</li>
-</ul>
-<p>注意 对于 ‘base64’ 和 ‘hex’， 该函数假定有效的输入。 对于包含 non-Base64/Hex-encoded 数据的字符串 (e.g. 空格)， 返回值可能大于 从字符串中创建的 Buffer 的长度。</p>
-<p>例子：</p>
-<blockquote>
-<p>const str = ‘\u00bd + \u00bc = \u00be’;</p>
-</blockquote>
-<blockquote>
-<p>// 输出: ½ + ¼ = ¾: 9 个字符, 12 个字节<br>console.log(`${str}: ${str.length} 个字符, ` +<br>           `${Buffer.byteLength(str, ‘utf8’)} 个字节`);<br>当 string 是一个 Buffer/DataView/TypedArray/ArrayBuffer/SharedArrayBuffer 时，返回实际的字节长度。</p>
-</blockquote>
-<h2 id="类方法：Buffer-from-array"><a href="#类方法：Buffer-from-array" class="headerlink" title="类方法：Buffer.from(array)"></a>类方法：Buffer.from(array)</h2><p>通过一个八位字节的 array 创建一个新的 Buffer 。</p>
-<p>例子：</p>
-<blockquote>
-<p>// 创建一个新的包含字符串 ‘buffer’ 的 UTF-8 字节的 Buffer<br>const buf = Buffer.from([0x62, 0x75, 0x66, 0x66, 0x65, 0x72]);<br>如果 array 不是一个数组，则抛出 TypeError 错误。</p>
-</blockquote>
-<h2 id="类方法：Buffer-concat-list-totalLength"><a href="#类方法：Buffer-concat-list-totalLength" class="headerlink" title="类方法：Buffer.concat(list[, totalLength])"></a>类方法：Buffer.concat(list[, totalLength])</h2><p>list &lt;Array&gt; 要合并的 Buffer 或 Uint8Array 实例的数组<br>totalLength &lt;integer&gt; 合并时 list 中 Buffer 实例的总长度<br>返回: &lt;Buffer&gt;<br>返回一个合并了 list 中所有 Buffer 实例的新建的 Buffer 。</p>
-<p>如果 list 中没有元素、或 totalLength 为 0 ，则返回一个新建的长度为 0 的 Buffer 。</p>
-<p>如果没有提供 totalLength ，则从 list 中的 Buffer 实例计算得到。 为了计算 totalLength 会导致需要执行额外的循环，所以提供明确的长度会运行更快。</p>
-<p>如果提供了 totalLength，totalLength 必须是一个正整数。如果从 list 中计算得到的 Buffer 长度超过了 totalLength，则合并的结果将会被截断为 totalLength 的长度。</p>
-<p>例子：从一个包含三个 Buffer 实例的数组创建为一个单一的 Buffer。</p>
-<blockquote>
-<p>const buf1 = Buffer.alloc(10);<br>const buf2 = Buffer.alloc(14);<br>const buf3 = Buffer.alloc(18);<br>const totalLength = buf1.length + buf2.length + buf3.length;</p>
-</blockquote>
-<blockquote>
-<p>// 输出: 42<br>console.log(totalLength);</p>
-</blockquote>
-<blockquote>
-<p>const bufA = Buffer.concat([buf1, buf2, buf3], totalLength);</p>
-</blockquote>
-<blockquote>
-<p>// 输出: <buffer 00="" ...=""><br>console.log(bufA);</buffer></p>
-</blockquote>
-<blockquote>
-<p>// 输出: 42<br>console.log(bufA.length);</p>
-</blockquote>
-<h2 id="buf-length"><a href="#buf-length" class="headerlink" title="buf.length"></a>buf.length</h2><p>返回 buf 在字节数上分配的内存量。 注意，这并不一定反映 buf 内可用的数据量。</p>
-<p>例子：创建一个 Buffer 并写入一个较短的 ASCII 字符串。</p>
-<blockquote>
-<p>const buf = Buffer.alloc(1234);</p>
-</blockquote>
-<blockquote>
-<p>// 输出: 1234<br>console.log(buf.length);</p>
-</blockquote>
-<blockquote>
-<p>buf.write(‘some string’, 0, ‘ascii’);</p>
-</blockquote>
-<blockquote>
-<p>// 输出: 1234<br>console.log(buf.length);<br>虽然 length 属性不是不可变的，但改变 length 的值可能会导致不确定、不一致的行为。 那些希望修改一个 Buffer 的长度的应用程序应当将 length 视为只读的，且使用 buf.slice() 创建一个新的 Buffer。</p>
-</blockquote>
-<p>例子：</p>
-<blockquote>
-<p>let buf = Buffer.allocUnsafe(10);</p>
-</blockquote>
-<blockquote>
-<p>buf.write(‘abcdefghj’, 0, ‘ascii’);</p>
-</blockquote>
-<blockquote>
-<p>// 输出: 10<br>console.log(buf.length);</p>
-</blockquote>
-<blockquote>
-<p>buf = buf.slice(0, 5);</p>
-</blockquote>
-<blockquote>
-<p>// 输出: 5<br>console.log(buf.length);</p>
-</blockquote>
-
+        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>思路： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -404,8 +324,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/liaoyublog.github.io/2018/08/14/node-path/" rel="next" title="node-path">
-                <i class="fa fa-chevron-left"></i> node-path
+              <a href="/liaoyublog.github.io/2018/08/26/float-and-absolute/" rel="next" title="float and absolute">
+                <i class="fa fa-chevron-left"></i> float and absolute
               </a>
             
           </div>
@@ -413,10 +333,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/liaoyublog.github.io/2018/08/18/node-events/" rel="prev" title="node-events">
-                node-events <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -530,7 +446,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Buffer"><span class="nav-number">1.</span> <span class="nav-text">Buffer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类方法：Buffer-alloc-size-fill-encoding"><span class="nav-number">1.1.</span> <span class="nav-text">类方法：Buffer.alloc(size[, fill[, encoding]])</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类方法：Buffer-byteLength-string-encoding"><span class="nav-number">1.2.</span> <span class="nav-text">类方法：Buffer.byteLength(string[, encoding])</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类方法：Buffer-from-array"><span class="nav-number">1.3.</span> <span class="nav-text">类方法：Buffer.from(array)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类方法：Buffer-concat-list-totalLength"><span class="nav-number">1.4.</span> <span class="nav-text">类方法：Buffer.concat(list[, totalLength])</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#buf-length"><span class="nav-number">1.5.</span> <span class="nav-text">buf.length</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">1.1.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></div>
             
 
           </div>
